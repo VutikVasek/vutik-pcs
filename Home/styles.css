@@ -342,7 +342,7 @@ footer .copyright .right {
 .intro .content .main-pc .parallax {
   width: 100%;
   height: 100%;
-  background-image: url("./resources/main-pc.png");
+  background-image: url("./main-pc.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
