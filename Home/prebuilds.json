@@ -1,0 +1,520 @@
+{
+    "prebuilds": [
+        {
+            "key": "pure",
+            "name": "PURE PERFORMANCE",
+            "description": "Co nejvíce FPS za co nejmenší cenu",
+            "pictures": [
+                "1-pure.jpeg",
+                "2-pure.jpeg",
+                "3-pure.jpeg",
+                "4-pure.jpeg",
+                "5-pure.jpeg",
+                "6-pure.jpeg"
+            ],
+            "stats": {
+                "fps": 90,
+                "cena": 90,
+                "estetika": 50,
+                "kompaktnost": 50
+            },
+            "builds": [
+                {
+                    "price": "20 000Kč",
+                    "components": [
+                        "CPU: Ryzen 9 7950X3D",
+                        "Cooler: Lian Li Galahad II Trinity",
+                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
+                        "Mobo: Asus ROG B650-A Gaming WiFi",
+                        "GPU: Asus RTX 4080 Super TUF Gaming",
+                        "SSD: WD_Black SN850X 2TB",
+                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
+                        "Case: NZXT H6 Flow",
+                        "Extra: Asus ROG Strix XF 120mm Fan",
+                        "Extra: AsiaHorse 140mm RGB Fans",
+                        "Extra: Formulamod Blue and White Cable Extensions"
+                    ],
+                    "case": "./resources/Untitled-12.png"
+                },
+                {
+                    "price": "25 000Kč",
+                    "components": [
+                        "CPU: Ryzen 9 7950X3D",
+                        "Cooler: Lian Li Galahad II Trinity",
+                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
+                        "Mobo: Asus ROG B650-A Gaming WiFi",
+                        "GPU: Asus RTX 4080 Super TUF Gaming",
+                        "SSD: WD_Black SN850X 2TB",
+                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
+                        "Case: NZXT H6 Flow",
+                        "Extra: Asus ROG Strix XF 120mm Fan",
+                        "Extra: AsiaHorse 140mm RGB Fans",
+                        "Extra: Formulamod Blue and White Cable Extensions"
+                    ],
+                    "case": "./resources/Untitled-12.png"
+                },
+                {
+                    "price": "30 000Kč",
+                    "components": [
+                        "CPU: Ryzen 9 7950X3D",
+                        "Cooler: Lian Li Galahad II Trinity",
+                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
+                        "Mobo: Asus ROG B650-A Gaming WiFi",
+                        "GPU: Asus RTX 4080 Super TUF Gaming",
+                        "SSD: WD_Black SN850X 2TB",
+                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
+                        "Case: NZXT H6 Flow",
+                        "Extra: Asus ROG Strix XF 120mm Fan",
+                        "Extra: AsiaHorse 140mm RGB Fans",
+                        "Extra: Formulamod Blue and White Cable Extensions"
+                    ],
+                    "case": "./resources/Untitled-12.png"
+                }
+            ],
+            "style": {
+                "dark": "#333333",
+                "light": "#dddddd",
+                "accent": "#ffffff",
+                "border": "2rem solid #ffffff",
+                "text": [
+                    "#fff",
+                    "#fff",
+                    "#000"
+                ]
+            }
+        },
+        {
+            "key": "rgb",
+            "name": "SUPER RGB",
+            "description": "Udělějte si doma disco nebo jen pasivně osvětlete komponenty",
+            "pictures": [
+                "1-rgb.jpeg",
+                "6-white.png",
+                "3-rgb.jpg",
+                "4-rgb.png",
+                "7-white.png",
+                "9-white.jpeg",
+                "8-white.jpeg",
+                "8-rgb.jpeg",
+                "9-rgb.jpeg",
+                "10-rgb.png",
+                "11-rgb.png",
+                "12-rgb.jpeg",
+                "13-rgb.jpeg",
+                "4-white.jpeg"
+            ],
+            "stats": {
+                "fps": 75,
+                "cena": 80,
+                "estetika": 85,
+                "kompaktnost": 30
+            },
+            "builds": [
+                {
+                    "price": "20 000Kč",
+                    "components": [
+                        "CPU: Ryzen 9 7950X3D",
+                        "Cooler: Lian Li Galahad II Trinity",
+                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
+                        "Mobo: Asus ROG B650-A Gaming WiFi",
+                        "GPU: Asus RTX 4080 Super TUF Gaming",
+                        "SSD: WD_Black SN850X 2TB",
+                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
+                        "Case: NZXT H6 Flow",
+                        "Extra: Asus ROG Strix XF 120mm Fan",
+                        "Extra: AsiaHorse 140mm RGB Fans",
+                        "Extra: Formulamod Blue and White Cable Extensions"
+                    ],
+                    "case": "./resources/Untitled-12.png"
+                },
+                {
+                    "price": "25 000Kč",
+                    "components": [
+                        "CPU: Ryzen 9 7950X3D",
+                        "Cooler: Lian Li Galahad II Trinity",
+                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
+                        "Mobo: Asus ROG B650-A Gaming WiFi",
+                        "GPU: Asus RTX 4080 Super TUF Gaming",
+                        "SSD: WD_Black SN850X 2TB",
+                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
+                        "Case: NZXT H6 Flow",
+                        "Extra: Asus ROG Strix XF 120mm Fan",
+                        "Extra: AsiaHorse 140mm RGB Fans",
+                        "Extra: Formulamod Blue and White Cable Extensions"
+                    ],
+                    "case": "./resources/Untitled-12.png"
+                },
+                {
+                    "price": "30 000Kč",
+                    "components": [
+                        "CPU: Ryzen 9 7950X3D",
+                        "Cooler: Lian Li Galahad II Trinity",
+                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
+                        "Mobo: Asus ROG B650-A Gaming WiFi",
+                        "GPU: Asus RTX 4080 Super TUF Gaming",
+                        "SSD: WD_Black SN850X 2TB",
+                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
+                        "Case: NZXT H6 Flow",
+                        "Extra: Asus ROG Strix XF 120mm Fan",
+                        "Extra: AsiaHorse 140mm RGB Fans",
+                        "Extra: Formulamod Blue and White Cable Extensions"
+                    ],
+                    "case": "./resources/Untitled-12.png"
+                }
+            ],
+            "style": {
+                "dark": "#D800DB",
+                "light": "#27CEAF",
+                "accent": "linear-gradient(in oklch to right, #faa, #afa, #aaf)",
+                "border": "none",
+                "text": [
+                    "#fff",
+                    "#fff",
+                    "#fff"
+                ]
+            }
+        },{
+            "key": "modern",
+            "name": "MODERNÍ",
+            "description": "Jednoduchý styl, který vypdá dobře kdykoli",
+            "pictures": [
+                "1-modern.jpg",
+                "1-mini.jpeg",
+                "5-mini.png"
+            ],
+            "stats": {
+                "fps": 65,
+                "cena": 60,
+                "estetika": 90,
+                "kompaktnost": 40
+            },
+            "builds": [
+                {
+                    "price": "25 000Kč",
+                    "components": [
+                        "CPU: Ryzen 9 7950X3D",
+                        "Cooler: Lian Li Galahad II Trinity",
+                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
+                        "Mobo: Asus ROG B650-A Gaming WiFi",
+                        "GPU: Asus RTX 4080 Super TUF Gaming",
+                        "SSD: WD_Black SN850X 2TB",
+                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
+                        "Case: NZXT H6 Flow",
+                        "Extra: Asus ROG Strix XF 120mm Fan",
+                        "Extra: AsiaHorse 140mm RGB Fans",
+                        "Extra: Formulamod Blue and White Cable Extensions"
+                    ],
+                    "case": "./resources/Untitled-12.png"
+                },
+                {
+                    "price": "30 000Kč",
+                    "components": [
+                        "CPU: Ryzen 9 7950X3D",
+                        "Cooler: Lian Li Galahad II Trinity",
+                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
+                        "Mobo: Asus ROG B650-A Gaming WiFi",
+                        "GPU: Asus RTX 4080 Super TUF Gaming",
+                        "SSD: WD_Black SN850X 2TB",
+                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
+                        "Case: NZXT H6 Flow",
+                        "Extra: Asus ROG Strix XF 120mm Fan",
+                        "Extra: AsiaHorse 140mm RGB Fans",
+                        "Extra: Formulamod Blue and White Cable Extensions"
+                    ],
+                    "case": "./resources/Untitled-12.png"
+                },
+                {
+                    "price": "35 000Kč",
+                    "components": [
+                        "CPU: Ryzen 9 7950X3D",
+                        "Cooler: Lian Li Galahad II Trinity",
+                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
+                        "Mobo: Asus ROG B650-A Gaming WiFi",
+                        "GPU: Asus RTX 4080 Super TUF Gaming",
+                        "SSD: WD_Black SN850X 2TB",
+                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
+                        "Case: NZXT H6 Flow",
+                        "Extra: Asus ROG Strix XF 120mm Fan",
+                        "Extra: AsiaHorse 140mm RGB Fans",
+                        "Extra: Formulamod Blue and White Cable Extensions"
+                    ],
+                    "case": "./resources/Untitled-12.png"
+                }
+            ],
+            "style": {
+                "dark": "#AB735B",
+                "light": "#EBDAA0",
+                "accent": "#D2A066",
+                "border": "3rem solid #D2A066",
+                "text": [
+                    "#000",
+                    "#000",
+                    "#000"
+                ]
+            }
+        },{
+            "key": "mini",
+            "name": "MINI PC",
+            "description": "Perfektní do Vašeho minimalistickéhho pokoje",
+            "pictures": [
+                "1-mini.jpeg",
+                "2-mini.jpeg",
+                "3-mini.jpeg",
+                "4-mini.jpg",
+                "5-mini.png",
+                "13-white.jpeg",
+                "7-mini.png",
+                "8-mini.jpeg",
+                "9-mini.jpeg"
+            ],
+            "stats": {
+                "fps": 65,
+                "cena": 50,
+                "estetika": 70,
+                "kompaktnost": 30
+            },
+            "builds": [
+                {
+                    "price": "25 000Kč",
+                    "components": [
+                        "CPU: Ryzen 9 7950X3D",
+                        "Cooler: Lian Li Galahad II Trinity",
+                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
+                        "Mobo: Asus ROG B650-A Gaming WiFi",
+                        "GPU: Asus RTX 4080 Super TUF Gaming",
+                        "SSD: WD_Black SN850X 2TB",
+                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
+                        "Case: NZXT H6 Flow",
+                        "Extra: Asus ROG Strix XF 120mm Fan",
+                        "Extra: AsiaHorse 140mm RGB Fans",
+                        "Extra: Formulamod Blue and White Cable Extensions"
+                    ],
+                    "case": "./resources/Untitled-12.png"
+                },
+                {
+                    "price": "30 000Kč",
+                    "components": [
+                        "CPU: Ryzen 9 7950X3D",
+                        "Cooler: Lian Li Galahad II Trinity",
+                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
+                        "Mobo: Asus ROG B650-A Gaming WiFi",
+                        "GPU: Asus RTX 4080 Super TUF Gaming",
+                        "SSD: WD_Black SN850X 2TB",
+                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
+                        "Case: NZXT H6 Flow",
+                        "Extra: Asus ROG Strix XF 120mm Fan",
+                        "Extra: AsiaHorse 140mm RGB Fans",
+                        "Extra: Formulamod Blue and White Cable Extensions"
+                    ],
+                    "case": "./resources/Untitled-12.png"
+                },
+                {
+                    "price": "35 000Kč",
+                    "components": [
+                        "CPU: Ryzen 9 7950X3D",
+                        "Cooler: Lian Li Galahad II Trinity",
+                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
+                        "Mobo: Asus ROG B650-A Gaming WiFi",
+                        "GPU: Asus RTX 4080 Super TUF Gaming",
+                        "SSD: WD_Black SN850X 2TB",
+                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
+                        "Case: NZXT H6 Flow",
+                        "Extra: Asus ROG Strix XF 120mm Fan",
+                        "Extra: AsiaHorse 140mm RGB Fans",
+                        "Extra: Formulamod Blue and White Cable Extensions"
+                    ],
+                    "case": "./resources/Untitled-12.png"
+                }
+            ],
+            "style": {
+                "dark": "#6E816F",
+                "light": "#ACC4AE",
+                "accent": "#77B27C",
+                "border": "none",
+                "text": [
+                    "#000",
+                    "#000",
+                    "#000"
+                ]
+            }
+        },{
+            "key": "white",
+            "name": "BÍLÝ",
+            "description": "Unikátní vzhled, který se každému zalíbí",
+            "pictures": [
+                "1-white.png",
+                "2-white.png",
+                "3-white.jpeg",
+                "4-white.jpeg",
+                "5-white.png",
+                "6-white.png",
+                "7-white.png",
+                "8-white.jpeg",
+                "9-white.jpeg",
+                "10-white.jpeg",
+                "11-white.png",
+                "12-white.png",
+                "13-white.jpeg",
+                "14-white.png"
+            ],
+            "stats": {
+                "fps": 80,
+                "cena": 75,
+                "estetika": 85,
+                "kompaktnost": 60
+            },
+            "builds": [
+                {
+                    "price": "20 000Kč",
+                    "components": [
+                        "CPU: Ryzen 9 7950X3D",
+                        "Cooler: Lian Li Galahad II Trinity",
+                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
+                        "Mobo: Asus ROG B650-A Gaming WiFi",
+                        "GPU: Asus RTX 4080 Super TUF Gaming",
+                        "SSD: WD_Black SN850X 2TB",
+                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
+                        "Case: NZXT H6 Flow",
+                        "Extra: Asus ROG Strix XF 120mm Fan",
+                        "Extra: AsiaHorse 140mm RGB Fans",
+                        "Extra: Formulamod Blue and White Cable Extensions"
+                    ],
+                    "case": "./resources/Untitled-12.png"
+                },
+                {
+                    "price": "25 000Kč",
+                    "components": [
+                        "CPU: Ryzen 9 7950X3D",
+                        "Cooler: Lian Li Galahad II Trinity",
+                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
+                        "Mobo: Asus ROG B650-A Gaming WiFi",
+                        "GPU: Asus RTX 4080 Super TUF Gaming",
+                        "SSD: WD_Black SN850X 2TB",
+                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
+                        "Case: NZXT H6 Flow",
+                        "Extra: Asus ROG Strix XF 120mm Fan",
+                        "Extra: AsiaHorse 140mm RGB Fans",
+                        "Extra: Formulamod Blue and White Cable Extensions"
+                    ],
+                    "case": "./resources/Untitled-12.png"
+                },
+                {
+                    "price": "30 000Kč",
+                    "components": [
+                        "CPU: Ryzen 9 7950X3D",
+                        "Cooler: Lian Li Galahad II Trinity",
+                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
+                        "Mobo: Asus ROG B650-A Gaming WiFi",
+                        "GPU: Asus RTX 4080 Super TUF Gaming",
+                        "SSD: WD_Black SN850X 2TB",
+                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
+                        "Case: NZXT H6 Flow",
+                        "Extra: Asus ROG Strix XF 120mm Fan",
+                        "Extra: AsiaHorse 140mm RGB Fans",
+                        "Extra: Formulamod Blue and White Cable Extensions"
+                    ],
+                    "case": "./resources/Untitled-12.png"
+                }
+            ],
+            "style": {
+                "dark": "#ffd6fe",
+                "light": "#b3c3fc",
+                "accent": "#fff",
+                "border": "none",
+                "text": [
+                    "#000",
+                    "#000",
+                    "#000"
+                ]
+            }
+        },{
+            "key": "normal",
+            "name": "PRŮMĚRNÝ ",
+            "description": "Počítač, který se v ničem nespecializuje",
+            "pictures": [
+                "1-normal.jpeg",
+                "2-normal.jpeg",
+                "3-normal.jpeg",
+                "4-normal.jpeg",
+                "5-normal.jpeg",
+                "6-normal.jpeg"
+            ],
+            "stats": {
+                "fps": 90,
+                "cena": 90,
+                "estetika": 75,
+                "kompaktnost": 60
+            },
+            "builds": [
+                {
+                    "price": "20 000Kč",
+                    "components": [
+                        "CPU: Ryzen 9 7950X3D",
+                        "Cooler: Lian Li Galahad II Trinity",
+                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
+                        "Mobo: Asus ROG B650-A Gaming WiFi",
+                        "GPU: Asus RTX 4080 Super TUF Gaming",
+                        "SSD: WD_Black SN850X 2TB",
+                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
+                        "Case: NZXT H6 Flow",
+                        "Extra: Asus ROG Strix XF 120mm Fan",
+                        "Extra: AsiaHorse 140mm RGB Fans",
+                        "Extra: Formulamod Blue and White Cable Extensions"
+                    ],
+                    "case": "./resources/Untitled-12.png"
+                },
+                {
+                    "price": "25 000Kč",
+                    "components": [
+                        "CPU: Ryzen 9 7950X3D",
+                        "Cooler: Lian Li Galahad II Trinity",
+                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
+                        "Mobo: Asus ROG B650-A Gaming WiFi",
+                        "GPU: Asus RTX 4080 Super TUF Gaming",
+                        "SSD: WD_Black SN850X 2TB",
+                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
+                        "Case: NZXT H6 Flow",
+                        "Extra: Asus ROG Strix XF 120mm Fan",
+                        "Extra: AsiaHorse 140mm RGB Fans",
+                        "Extra: Formulamod Blue and White Cable Extensions"
+                    ],
+                    "case": "./resources/Untitled-12.png"
+                },
+                {
+                    "price": "30 000Kč",
+                    "components": [
+                        "CPU: Ryzen 9 7950X3D",
+                        "Cooler: Lian Li Galahad II Trinity",
+                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
+                        "Mobo: Asus ROG B650-A Gaming WiFi",
+                        "GPU: Asus RTX 4080 Super TUF Gaming",
+                        "SSD: WD_Black SN850X 2TB",
+                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
+                        "Case: NZXT H6 Flow",
+                        "Extra: Asus ROG Strix XF 120mm Fan",
+                        "Extra: AsiaHorse 140mm RGB Fans",
+                        "Extra: Formulamod Blue and White Cable Extensions"
+                    ],
+                    "case": "./resources/Untitled-12.png"
+                }
+            ],
+            "style": {
+                "dark": "#212752",
+                "light": "#2d5221",
+                "accent": "#60bdb9",
+                "border": "2rem solid #387d7a",
+                "text": [
+                    "#fff",
+                    "#fff",
+                    "#fff"
+                ]
+            }
+        }
+    ],
+    "statNames": [
+        "fps",
+        "cena",
+        "estetika",
+        "kompaktnost"
+    ]
+}
