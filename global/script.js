@@ -46,7 +46,7 @@ function doStuff() {
             x: e.clientX - innerWidth / 2,
             y: e.clientY - innerHeight / 2,
             duration: 2,
-            ease: 'sine.out',
+            ease: 'power2.out',
         });
     });
 
