@@ -19,9 +19,12 @@ $(document).ready(function(e){
                         <div class="pic-carousel glide">
                             <div class="glide__track" data-glide-el="track">
                                 <ul class="glide__slides">
-                                    ${prebuild.pictures.map(pic => `<li class="glide__slide">
-                                        <div class="prebuild-pic lazy" data-bg="../pc-examples/${pic}"></div>
-                                    </li>`).join("")}                       
+                                    ${prebuild.pictures.map(pic => `
+                                    <li class="glide__slide">
+                                        <a data-fslightbox="${prebuild.key}" href="../pc-examples/${pic}">
+                                            <div class="prebuild-pic lazy" data-bg="../pc-examples/${pic}"></div>
+                                        </a>
+                                    </li>`).join("")}         
                                 </ul>
                             </div>
                             <div class="glide__arrows" data-glide-el="controls">
@@ -77,6 +80,7 @@ $(document).ready(function(e){
         })
         .catch(error => console.error('Error fetching JSON:', error))
         .finally(() => {
+            refreshFsLightbox();
 
 
             //LOGO ANIMATION
@@ -183,13 +187,13 @@ $(document).ready(function(e){
             $(".cross").click(function (e) { 
                 e.preventDefault();
                 $(this).parents(".pc-details").css("display", "none");
-                $("html").css("overflow-y", "scroll");
+                $("html").css("overflow", "");
             });
             $(".pc-details").click(function(e) {
                 e.preventDefault();
                 if (e.target === this) {
                     $(this).css("display", "none");
-                    $("html").css("overflow-y", "scroll");
+                    $("html").css("overflow", "");
                 }
             });
                 //animation

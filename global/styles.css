@@ -144,7 +144,7 @@ button, .navbar a, .arrow, .navbar i {
   }
 }
 .filter {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
