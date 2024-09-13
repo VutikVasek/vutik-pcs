@@ -212,7 +212,7 @@
 .showcase-wrapper::before {
     content: '';
     position: absolute;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     top: 0;
     left: 0;
@@ -264,8 +264,12 @@
                     height: 100%;
                     width: 100%;
                     padding: 25rem 0;
-                    display: flex;
-                    justify-content: center;
+                    & > a {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                    }
                 }
             }
             .glide__bullets {
@@ -521,6 +525,34 @@
 
 }
 
+body .fslightbox-container {
+    background: rgba(s.$background, 0.6 );
+     .fslightbox-nav {
+        height: 70rem;
+        .fslightbox-toolbar {
+            background: rgba(s.$background, 0.4);
+            border-bottom-left-radius: calc(s.$roundness / 2);
+            & > * {
+                width: 70rem;
+            }
+            svg {
+                width: 50rem;
+                height: 50rem;
+            }
+        }
+     }
+    .fslightbox-slide-btn-container {
+        padding: 30px;
+        .fslightbox-slide-btn {
+            background: rgba(s.$background, 0.4);
+            border-radius: 50rem;
+            svg {
+                width: 50rem;
+                height: 50rem;
+            }
+        }
+    }
+}
 
 
 @media screen and (min-aspect-ratio: 2.1/1) {
@@ -601,6 +633,9 @@
             height: 80vh;
         }
         height: auto;
+    }
+    .fslightbox-container .fslightbox-slide-btn-container {
+        display: none;
     }
 }
 
