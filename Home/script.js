@@ -21,8 +21,8 @@ $(document).ready(function(e){
                                 <ul class="glide__slides">
                                     ${prebuild.pictures.map(pic => `
                                     <li class="glide__slide">
-                                        <a data-fslightbox="${prebuild.key}" href="../pc-examples/${pic}">
-                                            <div class="prebuild-pic lazy" data-bg="../pc-examples/${pic}"></div>
+                                        <a data-fslightbox="${prebuild.key}" href="../pc-examples/${pic}.webp">
+                                            <div class="prebuild-pic lazy" data-bg="../pc-examples/${pic}.webp"></div>
                                         </a>
                                     </li>`).join("")}         
                                 </ul>
@@ -81,7 +81,6 @@ $(document).ready(function(e){
         .catch(error => console.error('Error fetching JSON:', error))
         .finally(() => {
             refreshFsLightbox();
-
 
             //LOGO ANIMATION
             const animateGrad = (num, percent) => {
@@ -219,6 +218,7 @@ $(document).ready(function(e){
                 gsap.to('.close', {
                     x: e.clientX,
                     y: e.clientY,
+                    translate: "-50% -50%",
                     duration: 0.3,
                     ease: 'sine.out',
                 });
@@ -230,6 +230,7 @@ $(document).ready(function(e){
                 new Glide(this, {
                     type: 'carousel',
                     perView: 1,
+                    keyboard: false,
                 }).mount().update().update();
             });
 
@@ -293,7 +294,8 @@ function openDetails(name, description, price, dark, light, accent, text, compon
     $(".pc-details .pay h3").css("color", text);
     $(".pc-details .price").text(price);
     //$(".pc-details .img").css("background-image", `url(${pic})`);
-    $(".pc-details .close").css("translate", "-50% -50%");
+    //$(".pc-details case a").attr("href", `url(${pic})`);
+    //refreshFsLightbox();
     $(".pc-details").css("display", "flex");
     $(".navbar").css('top', 'clamp(-120px, -4vw, -65px)');
     $("html").css("overflow", "hidden");

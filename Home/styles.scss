@@ -137,7 +137,7 @@
                 width: 100%;
                 height: 100%;
                 
-                background-image: url("./main-pc.png");
+                background-image: url("./main-pc.webp");
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
@@ -514,7 +514,7 @@
             display:flex;
             justify-content: center;
             align-items: center;
-            
+            cursor: pointer;
             &:hover {
                 background-color: rgba(white, 0.5);
             }
@@ -524,36 +524,6 @@
 
 
 }
-
-body .fslightbox-container {
-    background: rgba(s.$background, 0.6 );
-     .fslightbox-nav {
-        height: 70rem;
-        .fslightbox-toolbar {
-            background: rgba(s.$background, 0.4);
-            border-bottom-left-radius: calc(s.$roundness / 2);
-            & > * {
-                width: 70rem;
-            }
-            svg {
-                width: 50rem;
-                height: 50rem;
-            }
-        }
-     }
-    .fslightbox-slide-btn-container {
-        padding: 30px;
-        .fslightbox-slide-btn {
-            background: rgba(s.$background, 0.4);
-            border-radius: 50rem;
-            svg {
-                width: 50rem;
-                height: 50rem;
-            }
-        }
-    }
-}
-
 
 @media screen and (min-aspect-ratio: 2.1/1) {
     .pc-details {
@@ -634,8 +604,19 @@ body .fslightbox-container {
         }
         height: auto;
     }
-    .fslightbox-container .fslightbox-slide-btn-container {
-        display: none;
+    body .fslightbox-container {
+        .fslightbox-slide-btn-container {
+            display: none;
+        }
+        .fslightbox-fade-in, .fslightbox-fade-in-strong, .fslightbox-fade-out, div[class=""] {
+            width: 100%;
+            height: unset;
+            max-width: unset;
+            img {
+                height: 100% !important;
+                width: 100% !important;
+            }
+        }
     }
 }
 
@@ -644,7 +625,7 @@ body .fslightbox-container {
         .content {
             //justify-content: left;
             gap: 0;
-            padding: 50px 0 0;
+            padding: 0;
             .main-text {
                 .text > * {
                     width: auto;

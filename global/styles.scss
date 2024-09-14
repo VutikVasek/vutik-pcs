@@ -217,6 +217,62 @@ button, .navbar a, .arrow, .navbar i {
     }
 }
 
+body .fslightbox-container {
+    background: rgba($background, 0.8 );
+     .fslightbox-nav {
+        height: 70rem;
+        .fslightbox-toolbar {
+            background: rgba($background, 0.4);
+            border-bottom-left-radius: calc($roundness / 2);
+            & > * {
+                width: 70rem;
+            }
+            svg {
+                width: 50rem;
+                height: 50rem;
+            }
+        }
+        .fslightbox-slide-number-container {
+            width: 100rem;
+            max-width: unset;
+            & > div {
+                width: 100%;
+                font: $h3;
+                .fslightbox-slash {
+                    height: unset;
+                    width: unset;
+                    display: unset;
+                    margin: 0;
+                    background: unset;
+                    transform: none;
+                }
+                .fslightbox-slash::after {
+                    content: "/";
+                }
+            }
+        }
+     }
+    .fslightbox-slide-btn-container {
+        padding: 30rem;
+        .fslightbox-slide-btn {
+            background: rgba($background, 0.4);
+            border-radius: 50rem;
+            svg {
+                width: 50rem;
+                height: 50rem;
+            }
+        }
+    }
+    .fslightbox-fade-in, .fslightbox-fade-in-strong, .fslightbox-fade-out, div[class=""] {
+        height: calc(100% - 140rem);
+        max-width: calc(100% - 220rem);
+        img {
+            height: 100% !important;
+            width: 100% !important;
+        }
+    }
+}
+
 footer {
     display: flex;
     flex-direction: column;
@@ -265,6 +321,8 @@ footer {
     z-index: -2;
     -webkit-animation: gradient 5s infinite linear;
             animation: gradient 5s infinite linear;
+    
+    transition: transform 2s linear( 0, 0.2688 9.91%, 0.3859 15%, 0.4917 20.19%, 0.5865 25.5%, 0.6705 30.93%, 0.7441 36.51%, 0.8075 42.26%, 0.8593 47.98%, 0.9022 53.93%, 0.9366 60.13%, 0.963 66.67%, 0.9812 73.4%, 0.9929 80.76%, 0.9986 88.89%, 1 );
 }
 
 @-webkit-keyframes rotate {

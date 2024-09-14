@@ -16,8 +16,6 @@ $(document).ready(function () {
         lastScrollTop = currentScrollTop;
     });
 
-    console.log(window.innerHeight);
-
     
 
     /*$("form").submit(function (e) { 
@@ -41,50 +39,50 @@ $(document).ready(function () {
     }
 
     const pictures = [
-        "1-pure.jpeg",
-        "2-pure.jpeg",
-        "3-pure.jpeg",
-        "4-pure.jpeg",
-        "5-pure.jpeg",
-        "6-pure.jpeg",
-        "1-rgb.jpeg",
-        "3-rgb.jpg",
-        "4-rgb.png",
-        "8-rgb.jpeg",
-        "9-rgb.jpeg",
-        "10-rgb.png",
-        "11-rgb.png",
-        "12-rgb.jpeg",
-        "13-rgb.jpeg",
-        "1-modern.jpg",
-        "1-mini.jpeg",
-        "2-mini.jpeg",
-        "3-mini.jpeg",
-        "4-mini.jpg",
-        "5-mini.png",
-        "7-mini.png",
-        "8-mini.jpeg",
-        "9-mini.jpeg",
-        "1-white.png",
-        "2-white.png",
-        "3-white.jpeg",
-        "4-white.jpeg",
-        "5-white.png",
-        "6-white.png",
-        "7-white.png",
-        "8-white.jpeg",
-        "9-white.jpeg",
-        "10-white.jpeg",
-        "11-white.png",
-        "12-white.png",
-        "13-white.jpeg",
-        "14-white.png",
-        "1-normal.jpeg",
-        "2-normal.jpeg",
-        "3-normal.jpeg",
-        "4-normal.jpeg",
-        "5-normal.jpeg",
-        "6-normal.jpeg"];
+        "1-pure",
+        "2-pure",
+        "3-pure",
+        "4-pure",
+        "5-pure",
+        "6-pure",
+        "1-rgb",
+        "3-rgb",
+        "4-rgb",
+        "8-rgb",
+        "9-rgb",
+        "10-rgb",
+        "11-rgb",
+        "12-rgb",
+        "13-rgb",
+        "1-modern",
+        "1-mini",
+        "2-mini",
+        "3-mini",
+        "4-mini",
+        "5-mini",
+        "7-mini",
+        "8-mini",
+        "9-mini",
+        "1-white",
+        "2-white",
+        "3-white",
+        "4-white",
+        "5-white",
+        "6-white",
+        "7-white",
+        "8-white",
+        "9-white",
+        "10-white",
+        "11-white",
+        "12-white",
+        "13-white",
+        "14-white",
+        "1-normal",
+        "2-normal",
+        "3-normal",
+        "4-normal",
+        "5-normal",
+        "6-normal"];
 
     /*const rndPic = pictures.splice(Math.floor(Math.random() * pictures.length),1);
     
@@ -107,7 +105,9 @@ $(document).ready(function () {
             const rndPic = pictures.splice(Math.floor(Math.random() * pictures.length),1);
             $(".gallery").append(`
                 <div class="tile">
-                    <img src="../pc-examples/${rndPic}" />
+                    <a data-fslightbox="${rndPic}" href="../pc-examples/${rndPic}.webp">
+                        <img src="../pc-examples/${rndPic}.webp" />
+                    </a>
                 </div>
             `);
         }
@@ -117,7 +117,14 @@ $(document).ready(function () {
                     <div class="spacer"></div>
                 `);
             }
-    }
+    };
+    refreshFsLightbox();
+
+    //set content and navbar width so the scrollbar doesnt break it when in lightbox
+    $(".content").css("width", document.body.clientWidth + 'px');
+    $(window).resize(function () { 
+        $(".content").css("width", document.body.clientWidth + 'px');
+    });
 
     $(".pc-showcase").mousemove(function (e) {
         var elementOffset = $(this).offset(); // Get the element's offset
@@ -178,10 +185,10 @@ $(document).ready(function () {
         $(this).css("overflow", "visible");
     });
 
-    $(".tile img").click(function() {
+    /*$(".tile img").click(function() {
         $(this).css("object-fit", "contain");
         $(this).parent().css("overflow", "hidden");
-    });
+    });*/
     
 
     

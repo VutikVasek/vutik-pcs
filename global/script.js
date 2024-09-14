@@ -39,16 +39,38 @@ function doStuff() {
     const navDown = () => {
         $(".navbar").css('top', '0');
     }
+    $(".navbar").css("width", document.body.clientWidth + 'px');
+    $(window).resize(function () { 
+        $(".navbar").css("width", document.body.clientWidth + 'px');
+    });
 
     //CURSOR FOLLOWER
+    let mouseX = 0, mouseY = 0;
     $(window).mousemove(function (e) { 
-        gsap.to('.cursor-follower', {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        /*gsap.to('.cursor-follower', {
             x: e.clientX - innerWidth / 2,
             y: e.clientY - innerHeight / 2,
             duration: 2,
             ease: 'power2.out',
-        });
+        });*/
+        /*$('.cursor-follower').css({
+            left: e.pageX + 'px',
+            top: e.pageY + 'px',
+            duration: 2000
+        });*/
     });
+    function animate() {
+        $('.cursor-follower').css({
+            'transform': `translate(${mouseX - innerWidth / 2}px, ${mouseY - innerHeight / 2}px)`
+        });
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+
 
     // MAIN BUTTONS HOVER
     const buttonHover = b => {

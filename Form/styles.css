@@ -144,7 +144,7 @@ button, .navbar a, .arrow, .navbar i {
   }
 }
 .filter {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
@@ -174,6 +174,62 @@ button, .navbar a, .arrow, .navbar i {
   aspect-ratio: 1;
   background: linear-gradient(#090920, #27CEAF);
   border-radius: 50%;
+}
+
+body .fslightbox-container {
+  background: rgba(9, 9, 32, 0.8);
+}
+body .fslightbox-container .fslightbox-nav {
+  height: 70rem;
+}
+body .fslightbox-container .fslightbox-nav .fslightbox-toolbar {
+  background: rgba(9, 9, 32, 0.4);
+  border-bottom-left-radius: 10rem;
+}
+body .fslightbox-container .fslightbox-nav .fslightbox-toolbar > * {
+  width: 70rem;
+}
+body .fslightbox-container .fslightbox-nav .fslightbox-toolbar svg {
+  width: 50rem;
+  height: 50rem;
+}
+body .fslightbox-container .fslightbox-nav .fslightbox-slide-number-container {
+  width: 100rem;
+  max-width: unset;
+}
+body .fslightbox-container .fslightbox-nav .fslightbox-slide-number-container > div {
+  width: 100%;
+  font: clamp(17px, 1.5vmax, 45px) "Poppins", sans-serif;
+}
+body .fslightbox-container .fslightbox-nav .fslightbox-slide-number-container > div .fslightbox-slash {
+  height: unset;
+  width: unset;
+  display: unset;
+  margin: 0;
+  background: unset;
+  transform: none;
+}
+body .fslightbox-container .fslightbox-nav .fslightbox-slide-number-container > div .fslightbox-slash::after {
+  content: "/";
+}
+body .fslightbox-container .fslightbox-slide-btn-container {
+  padding: 30rem;
+}
+body .fslightbox-container .fslightbox-slide-btn-container .fslightbox-slide-btn {
+  background: rgba(9, 9, 32, 0.4);
+  border-radius: 50rem;
+}
+body .fslightbox-container .fslightbox-slide-btn-container .fslightbox-slide-btn svg {
+  width: 50rem;
+  height: 50rem;
+}
+body .fslightbox-container .fslightbox-fade-in, body .fslightbox-container .fslightbox-fade-in-strong, body .fslightbox-container .fslightbox-fade-out, body .fslightbox-container div[class=""] {
+  height: calc(100% - 140rem);
+  max-width: calc(100% - 220rem);
+}
+body .fslightbox-container .fslightbox-fade-in img, body .fslightbox-container .fslightbox-fade-in-strong img, body .fslightbox-container .fslightbox-fade-out img, body .fslightbox-container div[class=""] img {
+  height: 100% !important;
+  width: 100% !important;
 }
 
 footer {
@@ -218,6 +274,7 @@ footer .copyright .right {
   translate: -50% -50%;
   z-index: -2;
   animation: gradient 5s infinite linear;
+  transition: transform 2s linear(0, 0.2688 9.91%, 0.3859 15%, 0.4917 20.19%, 0.5865 25.5%, 0.6705 30.93%, 0.7441 36.51%, 0.8075 42.26%, 0.8593 47.98%, 0.9022 53.93%, 0.9366 60.13%, 0.963 66.67%, 0.9812 73.4%, 0.9929 80.76%, 0.9986 88.89%, 1);
 }
 @keyframes rotate {
   0% {
@@ -338,181 +395,6 @@ footer .copyright .right {
   overflow: clip;
   background: rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 20rem rgba(0, 0, 0, 0.25);
-  /*.blured {
-      position: absolute;
-      left: -5%;
-      top: -5%;
-      width: 110%;
-      height: 110%;
-      object-fit: cover;
-      opacity: 0.5;
-      filter: blur(10rem);
-    }
-    .focused {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-  }*/
-  /*.gallery {
-    width: 130%;
-    height: 130%;
-    position: absolute;
-    //background: #abc;
-    border-radius:  30px;
-    left: -10%;
-    top: -10%;
-    z-index: -1;
-    .tile {
-      position: absolute;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-        box-shadow: s.$shadow;
-        background: rgba(black, 0.5);
-      }
-
-      &:nth-child(1) {
-        width: 12%;
-        height: 23%;
-        left: 6%;
-        top: 8%;
-      }
-      &:nth-child(2) {
-        width: 21%;
-        height: 20%;
-        left: 80%;
-        top: 80%;
-      }
-      &:nth-child(3) {
-        width: 17%;
-        height: 15%;
-        left: 51%;
-        top: 7%;
-      }
-      &:nth-child(4) {
-        width: 17%;
-        height: 22%;
-        left: 78%;
-        top: 9%;
-      }
-      &:nth-child(5) {
-        width: 14%;
-        height: 20%;
-        left: 8%;
-        top: 45%;
-      }
-      &:nth-child(6) {
-        width: 14%;
-        height: 14%;
-        left: 30%;
-        top: 32%;
-      }
-      &:nth-child(7) {
-        width: 23%;
-        height: 19%;
-        left: 52%;
-        top: 85%;
-      }
-      &:nth-child(8) {
-        width: 17%;
-        height: 13%;
-        left: 33%;
-        top: 59%;
-      }
-      &:nth-child(9) {
-        width: 12%;
-        height: 10%;
-        left: 59%;
-        top: 54%;
-      }
-      &:nth-child(10) {
-        width: 12%;
-        height: 18%;
-        left: 81%;
-        top: 43%;
-      }
-      &:nth-child(11) {
-        width: 14%;
-        height: 11%;
-        left: 6%;
-        top: 78%;
-      }
-      &:nth-child(12) {
-        width: 21%;
-        height: 14%;
-        left: 30%;
-        top: 81%;
-      }
-      &:nth-child(13) {
-        width: 23%;
-        height: 22%;
-        left: 64%;
-        top: 72%;
-      }
-      &:nth-child(14) {
-        width: 16%;
-        height: 17%;
-        left: 15%;
-        top: 28%;
-      }
-      &:nth-child(15) {
-        width: 17%;
-        height: 15%;
-        left: 62%;
-        top: 22%;
-      }
-      &:nth-child(16) {
-        width: 17%;
-        height: 15%;
-        left: 41%;
-        top: 67%;
-      }
-      &:nth-child(17) {
-        width: 15%;
-        height: 21%;
-        left: 15%;
-        top: 58%;
-      }
-      &:nth-child(18) {
-        width: 14%;
-        height: 14%;
-        left: 41%;
-        top: 20%;
-      }
-      &:nth-child(19) {
-        width: 23%;
-        height: 19%;
-        left: 37%;
-        top: 41%;
-
-      }
-      &:nth-child(20) {
-        width: 17%;
-        height: 13%;
-        left: 78%;
-        top: 66%;
-      }
-      &:nth-child(21) {
-        width: 11%;
-        height: 11%;
-        left: 64%;
-        top: 35%;
-      }
-      &:nth-child(22) {
-        width: 11%;
-        height: 12%;
-        left: 20%;
-        top: 10%;
-      }
-    }
-  }*/
 }
 .content .pc-showcase span, .content .pc-showcase h2 {
   position: absolute;
