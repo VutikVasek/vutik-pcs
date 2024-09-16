@@ -151,7 +151,7 @@ button, .navbar a, .arrow, .navbar i {
   height: 100%;
   top: 0;
   left: 0;
-  background: url("../global/Random_static.png");
+  background: url("../global/Random_static.webp");
   background-repeat: repeat;
   -webkit-backdrop-filter: blur(100rem);
   backdrop-filter: blur(100rem);
@@ -743,7 +743,7 @@ footer .copyright .right {
 .pc-details .card .case .pic-container .img {
   height: 100%;
   width: auto;
-  background-image: url("../global/default.png");
+  background-image: url("../global/default.webp");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
