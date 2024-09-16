@@ -84,22 +84,6 @@ $(document).ready(function () {
         "5-normal",
         "6-normal"];
 
-    /*const rndPic = pictures.splice(Math.floor(Math.random() * pictures.length),1);
-    
-    $(".blured").attr('src', rndPic);
-    $(".focused").attr('src', rndPic);*/
-
-    /*for (let i = 0; i < 22; i++) {
-        const rndPic = pictures.splice(Math.floor(Math.random() * pictures.length),1);
-    
-        $(".gallery").append(`
-            <div class="tile" style="width: ${random(15, 20)}%; height: ${random(15, 25)}%;">
-                <img src="../pc-examples/${rndPic}" />
-            </div>
-        `)
-
-    }*/
-
     for (let i = 0; i < 5; i++) {
         for (let j = 0; j < 5; j++) {
             const rndPic = pictures.splice(Math.floor(Math.random() * pictures.length),1);
@@ -190,6 +174,11 @@ $(document).ready(function () {
         $(this).parent().css("overflow", "hidden");
     });*/
     
-
-    
+    importedLocal = true;
+    afterImport("local");
 });
+
+function afterImport(from) {
+    if (importedLocal && importedGlobal) {
+    }
+}

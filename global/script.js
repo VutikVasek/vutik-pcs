@@ -1,6 +1,7 @@
 
 
-
+let importedGlobal = false;
+let importedLocal = false;
 
 
 $(document).ready(function () {
@@ -33,12 +34,6 @@ $(document).ready(function () {
 
 function doStuff() {
     //NAVBAR
-    const navUp = () => {
-        $(".navbar").css('top', 'var(--nav-height)');
-    }
-    const navDown = () => {
-        $(".navbar").css('top', '0');
-    }
     $(".navbar").css("width", document.body.clientWidth + 'px');
     $(window).resize(function () { 
         $(".navbar").css("width", document.body.clientWidth + 'px');
@@ -98,7 +93,10 @@ function doStuff() {
         function() {
             buttonOut($(this))
         }
-    )
+    );
 
+    ScrollTrigger.refresh();
 
+    importedGlobal = true;
+    afterImport("global");
 }

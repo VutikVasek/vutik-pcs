@@ -79,8 +79,8 @@ button, .navbar a, .arrow, .navbar i {
   background-color: transparent;
 }
 .navbar img, .navbar i {
-  height: clamp(40px, 4vh, 7.5vmin);
-  font-size: clamp(40px, 4vh, 7.5vmin);
+  height: calc(clamp(65px, 4vmax, 120px) * 0.6);
+  font-size: calc(clamp(65px, 4vmax, 120px) * 0.6);
 }
 .navbar a {
   font: clamp(17px, 1.5vmax, 45px) "Poppins", sans-serif;
