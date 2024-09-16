@@ -270,21 +270,40 @@
                         display: flex;
                         justify-content: center;
                     }
+                    .prebuild-pic {
+                        height: 100%;
+                        width: 90%;
+                        //background-image: linear-gradient(rgba(white, 1), rgba(s.$light-blue, 1));
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        transform-origin: center;
+                        -webkit-filter: drop-shadow(s.$shadow);
+                                filter: drop-shadow(s.$shadow);
+                        overflow: hidden;
+                        &::before {
+                            display: block;
+                            position: absolute;
+                            content: none;
+                            width: 25%;
+                            aspect-ratio: 1;
+                            left: 50%;
+                            top: 50%;
+                            translate: -50% -50%;
+                            background:linear-gradient(rgba(0, 0, 0, 0) 10%, rgba(s.$light-blue, 0.8));
+                            border-radius: 50%;
+                            -webkit-mask-image: radial-gradient(transparent 45%, black 50%, black 60%, transparent 65%);
+                            mask-image: radial-gradient(transparent 45%, black 50%, black 60%, transparent 65%);
+                            animation: loading 2s linear infinite;
+                        }
+                        &.show-before::before {
+                            content: '';
+                        }
+                    }
                 }
             }
             .glide__bullets {
                 bottom: 10rem;
-            }
-            .prebuild-pic {
-                height: 100%;
-                width: 90%;
-                background-image: red;//url("./resources/Untitled-12.png");
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center;
-                transform-origin: center;
-                -webkit-filter: drop-shadow(s.$shadow);
-                        filter: drop-shadow(s.$shadow);
             }
 
             &.glide {
@@ -365,6 +384,7 @@
                     border-radius: calc(s.$roundness - 10rem);
                     font: s.$p;
                     padding: 15rem 0;
+                    font-weight: 600;
                     
                     &:hover {
                         font-weight: 900;
@@ -372,6 +392,15 @@
                 }
             }
         }
+    }
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }
 

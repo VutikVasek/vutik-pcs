@@ -66,7 +66,7 @@ $(document).ready(function(e){
                                             ${prebuild.style.light} ${300 - (index * 100)}%);
                                         border: ${prebuild.style.border};
                                     ">${build.price}</button>
-                                `).join("")}
+                                `).join("").replace(/\s+/g, ' ')}
                             </div>
                         </div>
                     </div>
@@ -161,18 +161,17 @@ $(document).ready(function(e){
             })
 
             let lastScrollTop = 0;
-            const navbar = $('.navbar');
 
             $(window).scroll(function(e) {
                 
                 let currentScrollTop = $(this).scrollTop();
                 if (currentScrollTop > lastScrollTop) {
                     // Scroll Down - hide navbar
-                    navbar.css('top', 'var(--nav-height)');
+                    $('.navbar').css('top', 'var(--nav-height)');
                     $(".menu-phone .menu").hide('hidden');
                 } else if (horizontal.progress() < 0.1 || currentScrollTop < 100) {
                     // Scroll Up - show navbar
-                    navbar.css('top', '0');
+                    $('.navbar').css('top', '0');
                 }
                 lastScrollTop = currentScrollTop;
 
@@ -235,14 +234,26 @@ $(document).ready(function(e){
             });
 
             //LAZY LOADING
-            const lazyBackgrounds = $(".lazy");
-
-            lazyBackgrounds.each(function () {
+            $(".lazy").each(function () {
                 const observer = new IntersectionObserver((entries, observer) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
-                            $(entry.target).css("background-image", `url(${$(entry.target).data("bg")})`);
+                            const url = $(entry.target).data("bg");
+                            /*$(entry.target).css("background-image", `url(${$(entry.target).data("bg")})`);
                             $(entry.target).removeClass("lazy");
+                            observer.unobserve(entry.target);*/
+                            $(entry.target).addClass('show-before');
+                            const p = new Promise((resolve, reject) => {
+                                const img = new Image();
+                                img.src = url;
+                                img.onload = () => {
+                                    $(entry.target).css("background-image", `url(${url})`);
+                                    $(entry.target).removeClass('show-before');
+                                }
+                                img.onerror = (err) => {
+                                    reject(err);
+                                }
+                            });
                             observer.unobserve(entry.target);
                         }
                     });
@@ -270,11 +281,21 @@ $(document).ready(function(e){
 
             
         ScrollTrigger.refresh();
-        $(window).scrollTop(0);
-        ScrollTrigger.refresh();
+
+        importedLocal = true;
+        afterImport("local");
     });
 
-})
+});
+
+function afterImport(from) {
+    if (importedLocal && importedGlobal) {
+        ScrollTrigger.refresh();
+        $(window).scrollTop(0);
+    }
+    $(window).scrollTop(0);
+    ScrollTrigger.refresh();
+}
 
 $(window).on("resize", function () {
     ScrollTrigger.refresh();

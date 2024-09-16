@@ -101,8 +101,8 @@ button, .navbar a, .arrow, .navbar i {
     background-color: transparent;
 
     img, i {
-        height: clamp(40px, 4vh, 7.5vmin);
-        font-size: clamp(40px, 4vh, 7.5vmin);
+        height: calc($navbar-height * 0.6);
+        font-size: calc($navbar-height * 0.6);
     }
 
     

@@ -35,6 +35,9 @@
       display: flex;
       flex-direction: column;
       gap: 10rem;
+      label:not([class="switch"]) {
+        width: fit-content;
+      }
       input, textarea {
         background: rgba(white, 0.2);
         border: none;
@@ -42,6 +45,7 @@
         resize: none;
         font: s.$p;
         padding-left: 10rem;
+        outline-width: 0.5px;
       }
       input {
         height: calc(2 * clamp(12px, 0.8vw, 25px));
@@ -51,7 +55,7 @@
           margin: 0;
         }
         &[type=number] {
-          width: 150rem;
+          width: 10%;
           appearance: none;
           -moz-appearance: textfield;
         }
@@ -63,6 +67,9 @@
             -webkit-text-fill-color: #ffffff;
             transition: background-color 5000s ease-in-out 0s;
             box-shadow: inset 0 0 20px 20px rgba(white, 0.2);
+        }
+        &:user-invalid {
+          box-shadow: 0 0 0 2rem red;
         }
       }
       textarea {
