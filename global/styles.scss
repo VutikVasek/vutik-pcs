@@ -96,7 +96,7 @@ button, .navbar a, .arrow, .navbar i {
     z-index: 90;
 
 
-    border-bottom:1rem solid rgba($cyan, 0.2);
+    //border-bottom:1rem solid rgba($cyan, 0.2);
 
     background-color: transparent;
 
@@ -157,7 +157,6 @@ button, .navbar a, .arrow, .navbar i {
                 min-width: 150rem;
 
                 &:hover {
-                    font-weight: 500;
                     background-color: rgba($cyan, 0.2);
                 }
             }
@@ -222,7 +221,7 @@ body .fslightbox-container {
      .fslightbox-nav {
         height: 70rem;
         .fslightbox-toolbar {
-            background: rgba($background, 0.4);
+            background: none;
             border-bottom-left-radius: calc($roundness / 2);
             & > * {
                 width: 70rem;
@@ -255,8 +254,9 @@ body .fslightbox-container {
     .fslightbox-slide-btn-container {
         padding: 30rem;
         .fslightbox-slide-btn {
-            background: rgba($background, 0.4);
+            background: none;
             border-radius: 50rem;
+            padding: 0;
             svg {
                 width: 50rem;
                 height: 50rem;
@@ -269,6 +269,7 @@ body .fslightbox-container {
         img {
             height: 100% !important;
             width: 100% !important;
+            object-fit: cover;
         }
     }
 }
@@ -276,14 +277,14 @@ body .fslightbox-container {
 footer {
     display: flex;
     flex-direction: column;
-    padding: 50rem 100rem;
-    gap: 100rem;
+    padding: 50rem;
+    gap: 50rem;
     width: 100%;
 
     .about-us {
         display: flex;
         flex-direction: column;
-        gap: 25rem;
+        gap: 10rem;
         width: 100%;
         p {width: 100%;}
     }
