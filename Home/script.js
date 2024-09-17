@@ -163,18 +163,18 @@ $(document).ready(function(e){
             let lastScrollTop = 0;
 
             $(window).scroll(function(e) {
-                
                 let currentScrollTop = $(this).scrollTop();
-                if (currentScrollTop > lastScrollTop || horizontal.progress() > 0.05) {
+                if (currentScrollTop < lastScrollTop && horizontal.progress() <= 0.05 || currentScrollTop < 10) {
+                    // Scroll Up - show navbar
+                    $('.navbar').css('top', '0');
+                }
+                else if (currentScrollTop > lastScrollTop || horizontal.progress() > 0.05) {
                     // Scroll Down - hide navbar
                     $('.navbar').css('top', 'var(--nav-height)');
                     $(".menu-phone .menu").hide('hidden');
                     if (currentScrollTop + $(window).height() >= $(document).height()) {
                         $('.navbar').css('top', '0');
                     }
-                } else if (horizontal.progress() <= 0.05 || currentScrollTop < 100) {
-                    // Scroll Up - show navbar
-                    $('.navbar').css('top', '0');
                 } 
                 lastScrollTop = currentScrollTop;
 
@@ -182,14 +182,6 @@ $(document).ready(function(e){
                 if (!window.matchMedia("(max-aspect-ratio: 1.2/1)").matches)
                     $(".parallax").css("transform", `translate(0%, ${currentScrollTop * 0.5}px)`);
             });
-            $(window).on('scroll hashchange', function () {
-                if (window.location.hash === "#top") {
-                    setTimeout(function () {
-                        $('.navbar').css('top', '0');
-                    }, "1000");
-                }
-                history.replaceState(null, null, ' ');
-            })
 
             //PC DETAILS
                 //close
