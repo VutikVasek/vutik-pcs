@@ -103,6 +103,9 @@ function doStuff() {
         }
     );
 
+    $(window).on('scroll hashchange', function () {
+        history.replaceState(null, null, ' ');
+    })
 
     ScrollTrigger.refresh();
 
