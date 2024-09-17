@@ -63,7 +63,15 @@ function doStuff() {
         requestAnimationFrame(animate);
     }
 
+    mouseX  = innerWidth / 2;
+    mouseY = innerHeight / 2;
     animate();
+
+    /*$(window).mousemove(function (e) { 
+        $('.cursor-follower').css({
+            'transform': `translate(${mouseX - innerWidth / 2}px, ${mouseY - innerHeight / 2}px)`
+        });
+    });*/
 
 
 
@@ -94,6 +102,7 @@ function doStuff() {
             buttonOut($(this))
         }
     );
+
 
     ScrollTrigger.refresh();
 

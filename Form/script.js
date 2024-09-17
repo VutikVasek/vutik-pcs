@@ -131,16 +131,18 @@ $(document).ready(function () {
         });
     });
 
-    $(".pc-showcase").hover(function() {
+    $(".pc-showcase").click(function() {
         $(".pc-showcase > span").fadeOut(500);
         $(".pc-showcase > h2").fadeOut(500);
+        $(".pc-showcase > a").fadeOut(500);
         gsap.to(this, {
             background: "rgba(0, 0, 0, 0)",
             duration: 0.5,
             onComplete: () => {$(this).children().css("z-index", "0")}
         });
         //$(this).children().css("z-index", "0");
-    }, function() {
+    });
+    $(".pc-showcase").hover(function() {}, function() {
         gsap.to(".gallery", {
             left: "-15%",
             top: "-15%",

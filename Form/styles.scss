@@ -4,8 +4,10 @@
   text-decoration: underline;
   text-underline-offset: 5rem;
 }
+main {
+  padding-top: s.$navbar-height;
+}
 .title {
-  margin-top: s.$navbar-height;
   display: flex;
   flex-direction: column;
   padding: 50rem 75rem;
@@ -118,7 +120,7 @@
     overflow: clip;
     background: rgba(black, 0.5);
     box-shadow: s.$shadow;
-    span, h2 {
+    span, h2, & > a {
       position: absolute;
       left: 50%;
       top: 50%;
@@ -128,6 +130,10 @@
     }
     h2 {
       top: 35%;
+    }
+    & > a {
+      font: s.$h3;
+      top: 90%;
     }
     .gallery {
       width: 130%;

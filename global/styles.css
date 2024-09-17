@@ -75,7 +75,6 @@ button, .navbar a, .arrow, .navbar i {
   -webkit-backdrop-filter: blur(15rem);
   backdrop-filter: blur(15rem);
   z-index: 90;
-  border-bottom: 1rem solid rgba(39, 206, 175, 0.2);
   background-color: transparent;
 }
 .navbar img, .navbar i {
@@ -128,7 +127,6 @@ button, .navbar a, .arrow, .navbar i {
   min-width: 150rem;
 }
 .navbar .menu-phone .menu a:hover {
-  font-weight: 500;
   background-color: rgba(39, 206, 175, 0.2);
 }
 
@@ -183,7 +181,7 @@ body .fslightbox-container .fslightbox-nav {
   height: 70rem;
 }
 body .fslightbox-container .fslightbox-nav .fslightbox-toolbar {
-  background: rgba(9, 9, 32, 0.4);
+  background: none;
   border-bottom-left-radius: 10rem;
 }
 body .fslightbox-container .fslightbox-nav .fslightbox-toolbar > * {
@@ -216,8 +214,9 @@ body .fslightbox-container .fslightbox-slide-btn-container {
   padding: 30rem;
 }
 body .fslightbox-container .fslightbox-slide-btn-container .fslightbox-slide-btn {
-  background: rgba(9, 9, 32, 0.4);
+  background: none;
   border-radius: 50rem;
+  padding: 0;
 }
 body .fslightbox-container .fslightbox-slide-btn-container .fslightbox-slide-btn svg {
   width: 50rem;
@@ -230,19 +229,21 @@ body .fslightbox-container .fslightbox-fade-in, body .fslightbox-container .fsli
 body .fslightbox-container .fslightbox-fade-in img, body .fslightbox-container .fslightbox-fade-in-strong img, body .fslightbox-container .fslightbox-fade-out img, body .fslightbox-container div[class=""] img {
   height: 100% !important;
   width: 100% !important;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 footer {
   display: flex;
   flex-direction: column;
-  padding: 50rem 100rem;
-  gap: 100rem;
+  padding: 50rem;
+  gap: 50rem;
   width: 100%;
 }
 footer .about-us {
   display: flex;
   flex-direction: column;
-  gap: 25rem;
+  gap: 10rem;
   width: 100%;
 }
 footer .about-us p {

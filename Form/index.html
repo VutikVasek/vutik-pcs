@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./global/Logo-favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
@@ -18,52 +19,55 @@
     <title>Vutik PC</title>
 </head>
 <body>
-    <div class="title">
-        <h2>Jste o jeden krok blíže k perfektnímu počítači pro Vás!</h2>
-        <h3>Vypište tento formulář a do 5 dnů Vám na email přijde potvrzení se seznamem komponent a odkazem na zaplacení. <br />
-            Po zaplacení bude do týdne počítač Váš!</h3>
-    </div>
-    <div class="content">
-        <form action="" method="post">
-            <div class="pair">
-                <label for="email"><p>Váš email</p></label>
-                <input type="email" name="email" id="email" required />
-            </div>
-            <div class="pair">
-                <label for="cost"><p>Cena - vyberte si kolik zaplatíte (min 15 000Kč)</p></label>
-                <div class="inline"><input type="number" name="cost" id="cost" required></input><p>Kč</p></div>
-            </div>
-            <div class="pair">
-                <label for="purpose"><p>Popište, co chcete na tomto počítači dělat (např. střílečky, nejnovější náročné hry, edtování, 3D modelování, atd.)</p></label>
-                <textarea name="purpose" id="purpose" required></textarea>
-            </div>
-            <div class="pair">
-                <label for="looks"><p>Jak má vypdat? Pro inspiraci se můžete podívat na hlavní stránku na sestavy.</p></label>
-                <textarea name="looks" id="looks" required></textarea>
-            </div>
-            <div class="pair">
-                <label for="specification"><p>Technické požadavky (nepovinné, např. DDR5, úložiště, nvidia, atd.)</p></label>
-                <textarea name="specification" id="specification"></textarea>
-            </div>
-            <div class="pair">
-                <label for="used"><p>Můžeme nakoupit použitou grafickou kartu? Použité grafické karty jsou o hodně levnější, tudíž můžete mít lepší model</p></label>
-                <label class="switch">
-                    <input type="checkbox" name="used" id="used">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-            <p>Osobní vyzvednutí v Mohelnici, případně po domluvě mohu přijet a pomoct Vám se setupem počítače.</p>
-            <button class="main" type="submit"><h3>Odeslat</h3></button>
-        </form>
-        <div class="pc-showcase">
-            <!--<img class="blured"></img>
-            <img class="focused"></img>-->
-            <span class="material-symbols-outlined">pan_tool_alt</span>
-            <h2>Inspirace</h2>
-            <div class="gallery"></div>
+    <main id="top">
+        <div class="title">
+            <h2>Jste o jeden krok blíže k perfektnímu počítači pro Vás!</h2>
+            <h3>Vypište tento formulář a do 5 dnů Vám na email přijde potvrzení se seznamem komponent a odkazem na zaplacení. <br />
+                Po zaplacení bude do týdne počítač Váš!</h3>
         </div>
-        <div class="background-circle"></div>
-    </div>
+        <div class="content">
+            <form action="" method="post">
+                <div class="pair">
+                    <label for="email"><p>Váš email</p></label>
+                    <input type="email" name="email" id="email" required />
+                </div>
+                <div class="pair">
+                    <label for="cost"><p>Cena - vyberte si kolik zaplatíte (min 15 000Kč)</p></label>
+                    <div class="inline"><input type="number" name="cost" id="cost" required></input><p>Kč</p></div>
+                </div>
+                <div class="pair">
+                    <label for="purpose"><p>Popište, co chcete na tomto počítači dělat (např. střílečky, nejnovější náročné hry, editování, 3D modelování, atd.)</p></label>
+                    <textarea name="purpose" id="purpose" required></textarea>
+                </div>
+                <div class="pair">
+                    <label for="looks"><p>Jak má vypadat? Pro inspiraci se můžete podívat na hlavní stránku na sestavy.</p></label>
+                    <textarea name="looks" id="looks" required></textarea>
+                </div>
+                <div class="pair">
+                    <label for="specification"><p>Technické požadavky (nepovinné, např. DDR5, úložiště, nvidia, atd.)</p></label>
+                    <textarea name="specification" id="specification"></textarea>
+                </div>
+                <div class="pair">
+                    <label for="used"><p>Můžeme nakoupit použitou grafickou kartu? Použité grafické karty jsou o hodně levnější, tudíž můžete mít lepší model</p></label>
+                    <label class="switch">
+                        <input type="checkbox" name="used" id="used">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <p>Osobní vyzvednutí v Mohelnici, případně po domluvě mohu přijet a pomoct Vám se setupem počítače.</p>
+                <button class="main" type="submit"><h3>Odeslat</h3></button>
+            </form>
+            <div class="pc-showcase">
+                <!--<img class="blured"></img>
+                <img class="focused"></img>-->
+                <span class="material-symbols-outlined">pan_tool_alt</span>
+                <h2>Inspirace </h2>
+                <a href="https://discord.com/channels/368511087139618826/734469851011219466" target="_blank">https://discord.gg/ztt</a>
+                <div class="gallery"></div>
+            </div>
+            <div class="background-circle"></div>
+        </div>
+    </main>
     
     
 

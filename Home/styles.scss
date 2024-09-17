@@ -31,7 +31,7 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            padding: 100rem 50rem 50rem;
+            padding: 50rem;
             gap: 50rem;
             align-items: center;
 
@@ -87,8 +87,11 @@
                     color: s.$text;
                     // transition: 1s linear;
                     position: relative;
+                }
+                
 
-                    &:nth-child(1) {
+                a:nth-child(1) {
+                    button {
                         --tint: 50%;
                         background: 
                             //background:
@@ -103,8 +106,10 @@
                         background-clip: padding-box, padding-box, padding-box, border-box, border-box;
                         background-origin: border-box;
                     }
+                }
 
-                    &:nth-child(2) {
+                a:nth-child(2) {
+                    button {
                         --tint: 50%;
                         background: 
                             //background:
@@ -216,7 +221,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(45deg, rgba(s.$blue, 0.5), rgba(s.$cyan, 0.5));
+    background: linear-gradient(to top right, rgba(s.$blue, 0.5) -20%, rgba(s.$cyan, 0.5) 100%);
     z-index: 0;
 }
 
@@ -663,6 +668,9 @@
             }
             .buttons {
                 flex-direction: column;
+                button {
+                    width: 100%
+                }
             }
             .main-pc {
                 padding: 0 40rem;

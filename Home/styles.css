@@ -77,7 +77,6 @@ button, .navbar a, .arrow, .navbar i {
   -webkit-backdrop-filter: blur(15rem);
   backdrop-filter: blur(15rem);
   z-index: 90;
-  border-bottom: 1rem solid rgba(39, 206, 175, 0.2);
   background-color: transparent;
 }
 .navbar img, .navbar i {
@@ -130,7 +129,6 @@ button, .navbar a, .arrow, .navbar i {
   min-width: 150rem;
 }
 .navbar .menu-phone .menu a:hover {
-  font-weight: 500;
   background-color: rgba(39, 206, 175, 0.2);
 }
 
@@ -185,7 +183,7 @@ body .fslightbox-container .fslightbox-nav {
   height: 70rem;
 }
 body .fslightbox-container .fslightbox-nav .fslightbox-toolbar {
-  background: rgba(9, 9, 32, 0.4);
+  background: none;
   border-bottom-left-radius: 10rem;
 }
 body .fslightbox-container .fslightbox-nav .fslightbox-toolbar > * {
@@ -218,8 +216,9 @@ body .fslightbox-container .fslightbox-slide-btn-container {
   padding: 30rem;
 }
 body .fslightbox-container .fslightbox-slide-btn-container .fslightbox-slide-btn {
-  background: rgba(9, 9, 32, 0.4);
+  background: none;
   border-radius: 50rem;
+  padding: 0;
 }
 body .fslightbox-container .fslightbox-slide-btn-container .fslightbox-slide-btn svg {
   width: 50rem;
@@ -232,19 +231,21 @@ body .fslightbox-container .fslightbox-fade-in, body .fslightbox-container .fsli
 body .fslightbox-container .fslightbox-fade-in img, body .fslightbox-container .fslightbox-fade-in-strong img, body .fslightbox-container .fslightbox-fade-out img, body .fslightbox-container div[class=""] img {
   height: 100% !important;
   width: 100% !important;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 footer {
   display: flex;
   flex-direction: column;
-  padding: 50rem 100rem;
-  gap: 100rem;
+  padding: 50rem;
+  gap: 50rem;
   width: 100%;
 }
 footer .about-us {
   display: flex;
   flex-direction: column;
-  gap: 25rem;
+  gap: 10rem;
   width: 100%;
 }
 footer .about-us p {
@@ -324,7 +325,7 @@ footer .copyright .right {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 100rem 50rem 50rem;
+  padding: 50rem;
   gap: 50rem;
   align-items: center;
 }
@@ -375,14 +376,14 @@ footer .copyright .right {
   color: #FFF;
   position: relative;
 }
-.intro .content .main-text .buttons button:nth-child(1) {
+.intro .content .main-text .buttons a:nth-child(1) button {
   --tint: 50%;
   background: linear-gradient(rgba(9, 9, 32, var(--tint)), rgba(9, 9, 32, var(--tint))), linear-gradient(#090920 calc(var(--tint) - 50%), transparent), linear-gradient(100deg, #D800DB, #00D1FF), linear-gradient(rgba(9, 9, 32, calc(var(--tint) + 40%)), transparent), linear-gradient(100deg, #D800DB, #00D1FF);
   box-shadow: inset 0 0 30rem rgba(63, 56, 255, 0.25);
   background-clip: padding-box, padding-box, padding-box, border-box, border-box;
   background-origin: border-box;
 }
-.intro .content .main-text .buttons button:nth-child(2) {
+.intro .content .main-text .buttons a:nth-child(2) button {
   --tint: 50%;
   background: linear-gradient(rgba(9, 9, 32, var(--tint)), rgba(9, 9, 32, var(--tint))), linear-gradient(#090920 calc(var(--tint) - 50%), transparent), linear-gradient(100deg, #27CEAF, #3F38FF), linear-gradient(rgba(9, 9, 32, calc(var(--tint) + 30%)), transparent), linear-gradient(100deg, #27CEAF, #3F38FF);
   box-shadow: inset 0 0 30rem rgba(0, 209, 255, 0.25);
@@ -464,7 +465,7 @@ footer .copyright .right {
   height: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(45deg, rgba(63, 56, 255, 0.5), rgba(39, 206, 175, 0.5));
+  background: linear-gradient(to top right, rgba(63, 56, 255, 0.5) -20%, rgba(39, 206, 175, 0.5) 100%);
   z-index: 0;
 }
 
@@ -869,6 +870,9 @@ footer .copyright .right {
   }
   body .intro .content .buttons {
     flex-direction: column;
+  }
+  body .intro .content .buttons button {
+    width: 100%;
   }
   body .intro .content .main-pc {
     padding: 0 40rem;
