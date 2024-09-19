@@ -164,6 +164,7 @@ $(document).ready(function(e){
 
             $(window).scroll(function(e) {
                 let currentScrollTop = $(this).scrollTop();
+
                 if (currentScrollTop < lastScrollTop && horizontal.progress() <= 0.05 || currentScrollTop < 10) {
                     // Scroll Up - show navbar
                     $('.navbar').css('top', '0');
@@ -172,7 +173,7 @@ $(document).ready(function(e){
                     // Scroll Down - hide navbar
                     $('.navbar').css('top', 'var(--nav-height)');
                     $(".menu-phone .menu").hide('hidden');
-                    if (currentScrollTop + $(window).height() >= $(document).height()) {
+                    if (currentScrollTop + window.innerHeight >= $(document).height()) {
                         $('.navbar').css('top', '0');
                     }
                 } 
@@ -189,12 +190,14 @@ $(document).ready(function(e){
                 e.preventDefault();
                 $(this).parents(".pc-details").css("display", "none");
                 $("html").css("overflow", "");
+                window.removeEventListener('touchmove', preventTouchScroll, { passive: false });
             });
             $(".pc-details").click(function(e) {
                 e.preventDefault();
                 if (e.target === this) {
                     $(this).css("display", "none");
                     $("html").css("overflow", "");
+                    window.removeEventListener('touchmove', preventTouchScroll, { passive: false });
                 }
             });
                 //animation
@@ -301,13 +304,20 @@ function afterImport(from) {
 }
 
 $(window).on("resize", function () {
+    $(".pc-details").css("height", window.innerHeight + "px");
     ScrollTrigger.refresh();
     //$(window).scrollTop(0);
     ScrollTrigger.refresh();
 });
+
+
+function preventTouchScroll(event) {
+    event.preventDefault();
+}
     
 //open
 function openDetails(name, description, price, dark, light, accent, text, components, pic) {
+    $(".pc-details").css("height", window.innerHeight + "px");
     $(".pc-details .card").css("background", `linear-gradient(to top right, ${dark}, ${light})`)
                             .css("--accent", accent);
     $(".pc-details .info .title h3").text(`${name} - ${price}`);
@@ -323,6 +333,7 @@ function openDetails(name, description, price, dark, light, accent, text, compon
     $(".pc-details").css("display", "flex");
     $(".navbar").css('top', 'clamp(-120px, -4vw, -65px)');
     $("html").css("overflow", "hidden");
+    window.addEventListener('touchmove', preventTouchScroll, { passive: false });
 
     gsap.fromTo('.pc-details', {
         opacity: 0,

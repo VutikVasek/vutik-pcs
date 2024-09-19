@@ -37,6 +37,10 @@ li {
   font: clamp(15px, 1vmax, 30px) "Inter", sans-serif;
 }
 
+ul {
+  padding-inline-start: 40rem;
+}
+
 html {
   min-height: 100%;
   position: relative;
@@ -144,7 +148,7 @@ button, .navbar a, .arrow, .navbar i {
 .filter {
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   top: 0;
   left: 0;
   background: url("../global/Random_static.webp");
@@ -296,6 +300,36 @@ footer .copyright .right {
     background-position: 200%;
   }
 }
+@media screen and (max-aspect-ratio: 1/1) {
+  body .fslightbox-container .fslightbox-nav {
+    height: unset;
+  }
+  body .fslightbox-container .fslightbox-nav .fslightbox-toolbar {
+    width: 100%;
+    justify-content: space-between;
+  }
+  body .fslightbox-container .fslightbox-nav .fslightbox-toolbar .fslightbox-toolbar-button {
+    width: unset;
+    height: unset;
+    padding: 100rem 75rem;
+  }
+  body .fslightbox-container .fslightbox-nav .fslightbox-slide-number-container {
+    padding: 75rem 0;
+    margin: auto;
+  }
+  body .fslightbox-container .fslightbox-slide-btn-container {
+    display: none;
+  }
+  body .fslightbox-container .fslightbox-fade-in, body .fslightbox-container .fslightbox-fade-in-strong, body .fslightbox-container .fslightbox-fade-out, body .fslightbox-container div[class=""] {
+    width: 100%;
+    height: unset;
+    max-width: unset;
+  }
+  body .fslightbox-container .fslightbox-fade-in img, body .fslightbox-container .fslightbox-fade-in-strong img, body .fslightbox-container .fslightbox-fade-out img, body .fslightbox-container div[class=""] img {
+    height: 100% !important;
+    width: 100% !important;
+  }
+}
 .navbar .order {
   text-decoration: underline;
   text-underline-offset: 5rem;
@@ -361,7 +395,7 @@ main {
   margin: 0;
 }
 .content form .pair input[type=number] {
-  width: 10%;
+  width: 10vmax;
   -webkit-appearance: none;
           appearance: none;
   -moz-appearance: textfield;
@@ -460,8 +494,8 @@ footer {
 .switch {
   position: relative;
   display: inline-block;
-  width: 45rem;
-  height: 25.5rem;
+  width: calc(30 * max(1.5px, 1.5rem));
+  height: calc(17 * max(1.5px, 1.5rem));
 }
 
 /* Hide default HTML checkbox */
@@ -486,10 +520,10 @@ footer {
 .slider:before {
   position: absolute;
   content: "";
-  height: 19.5rem;
-  width: 19.5rem;
-  left: 3rem;
-  bottom: 3rem;
+  height: calc(13 * max(1.5px, 1.5rem));
+  width: calc(13 * max(1.5px, 1.5rem));
+  left: calc(2 * max(1.5px, 1.5rem));
+  bottom: calc(2 * max(1.5px, 1.5rem));
   background-color: white;
   transition: 0.4s;
 }
@@ -499,16 +533,16 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1.5rem #27CEAF;
+  box-shadow: 0 0 calc(1 * max(1.5px, 1.5rem)) #27CEAF;
 }
 
 input:checked + .slider:before {
-  transform: translateX(19.5rem);
+  transform: translateX(calc(13 * max(1.5px, 1.5rem)));
 }
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 25.5rem;
+  border-radius: calc(17 * max(1.5px, 1.5rem));
 }
 
 .slider.round:before {

@@ -57,7 +57,7 @@ main {
           margin: 0;
         }
         &[type=number] {
-          width: 10%;
+          width: 10vmax;
           appearance: none;
           -moz-appearance: textfield;
         }
@@ -177,12 +177,12 @@ footer {
 
 //W3S TOGGLE SLIDER SWITCH
 /* The switch - the box around the slider */
-$size: 1.5;
+$size: max(1.5px, 1.5rem);
 .switch {
   position: relative;
   display: inline-block;
-  width: calc(30rem * $size);
-  height: calc(17rem * $size);   
+  width: calc(30 * $size);
+  height: calc(17 * $size);   
 }
   
   /* Hide default HTML checkbox */
@@ -208,10 +208,10 @@ $size: 1.5;
 .slider:before {
   position: absolute;
   content: "";
-  height: calc(13rem * $size);
-  width: calc(13rem * $size);
-  left: calc(2rem * $size);
-  bottom: calc(2rem * $size);
+  height: calc(13 * $size);
+  width: calc(13 * $size);
+  left: calc(2 * $size);
+  bottom: calc(2 * $size);
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
@@ -222,18 +222,18 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 calc(1rem * $size) s.$cyan;
+  box-shadow: 0 0 calc(1 * $size) s.$cyan;
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(calc(13rem * $size));
-  -ms-transform: translateX(calc(13rem * $size));
-  transform: translateX(calc(13rem * $size));
+  -webkit-transform: translateX(calc(13 * $size));
+  -ms-transform: translateX(calc(13 * $size));
+  transform: translateX(calc(13 * $size));
 }
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: calc(17rem * $size);
+  border-radius: calc(17 * $size);
 }
 
 .slider.round:before {
