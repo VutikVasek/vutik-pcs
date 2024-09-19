@@ -474,6 +474,7 @@
                 flex-direction: column;
                 gap: 25rem;
                 padding: 25rem;
+                //padding-left: 0;
                 background: rgba(s.$background, 0.4);
                 h3 {
                     text-align: center;
@@ -559,15 +560,9 @@
 
 }
 
-@media screen and (min-aspect-ratio: 2.1/1) {
+@media screen and (min-aspect-ratio: 2.2/1) {
     .pc-details {
         padding: 75rem;
-    }
-}
-
-@media screen and (min-aspect-ratio: 2.1/1) {
-    body .intro .content {
-        padding: 0 100rem;
     }
 }
 
@@ -617,11 +612,9 @@
     .pc-details {
         padding: 0;
         
-        height: 100vh;
+        //height: 100vh;
         background: black;
         .card {
-            //height: 100svh;
-            padding-bottom: calc(100vh - 100svh + 25rem);
             flex-direction: column;
             .top .cross {
                 display: flex;
@@ -637,20 +630,6 @@
             height: 80vh;
         }
         height: auto;
-    }
-    body .fslightbox-container {
-        .fslightbox-slide-btn-container {
-            display: none;
-        }
-        .fslightbox-fade-in, .fslightbox-fade-in-strong, .fslightbox-fade-out, div[class=""] {
-            width: 100%;
-            height: unset;
-            max-width: unset;
-            img {
-                height: 100% !important;
-                width: 100% !important;
-            }
-        }
     }
 }
 
