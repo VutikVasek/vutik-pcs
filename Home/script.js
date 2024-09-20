@@ -255,12 +255,12 @@ $(document).ready(function(e){
                                 img.onload = () => {
                                     $(entry.target).css("background-image", `url(${url})`);
                                     $(entry.target).removeClass('show-before');
+                                    observer.unobserve(entry.target);
                                 }
                                 img.onerror = (err) => {
                                     reject(err);
                                 }
                             });
-                            observer.unobserve(entry.target);
                         }
                     });
                 });
