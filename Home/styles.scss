@@ -153,12 +153,14 @@
         }
     }
 
-    i {
+    svg {
+        height: 70rem;
+        width: 60rem;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         bottom: 0;
-        color: s.$cyan;
+        fill: s.$cyan;
         z-index: 2;
     }
 
@@ -323,19 +325,19 @@
                 width: 50rem;
                 height: 50rem;
                 border-radius: 50%;
-                background-color: rgba(white, 0.3);
+                background-color: rgba(white, 0.7);
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
                 border: none;
                 text-shadow: none;
                 box-shadow: none;
-                i {
-                    font-size: 40rem;
-                    color: black;
+                img {
+                    width: 30rem;
+                    height: 30rem;
                 }
                 &:hover {
-                    background-color: rgba(white, 0.5);
+                    background-color: rgba(white, 0.9);
                 }
             }
         }
@@ -439,9 +441,9 @@
                 display: none;
                 justify-content: center;
                 align-items: center;
-                i {
+                img {
                     height: 70rem;
-                    font-size: 60rem;
+                    width: 70rem;
                 }
             }
         }
@@ -496,8 +498,11 @@
                         border: 5rem solid black;
                         padding: 15rem;
                         box-shadow: s.$shadow;
-                        i {
-                            font-size: 35rem;
+                        display: flex;
+                        justify-content: center;
+                        img {
+                            width: 35rem;
+                            height: 35rem;
                         }
                     }
             }
@@ -534,14 +539,17 @@
         left: 0;
         //translate: -50% -50%;
         z-index: 1;
-        i {
-            height: 50rem;
-            font-size: 40rem;
+        img {
+            width: 40rem;
+            height: 40rem;
         }
     }
 
     .cross {
-        i {
+        img {
+            width: 50rem;
+            height: 50rem;
+            padding: 5rem;
             aspect-ratio: 1;
             border-radius: 50%;
             background-color: rgba(white, 0.3);

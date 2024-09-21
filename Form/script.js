@@ -132,7 +132,7 @@ $(document).ready(function () {
     });
 
     $(".pc-showcase").click(function() {
-        $(".pc-showcase > span").fadeOut(500);
+        $(".pc-showcase > img").fadeOut(500);
         $(".pc-showcase > h2").fadeOut(500);
         $(".pc-showcase > a").fadeOut(500);
         gsap.to(this, {

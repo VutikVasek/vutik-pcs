@@ -29,10 +29,10 @@ $(document).ready(function(e){
                             </div>
                             <div class="glide__arrows" data-glide-el="controls">
                                 <button class="glide__arrow glide__arrow--left arrow" data-glide-dir="<">
-                                    <i class="fa-solid fa-angle-left"></i>
+                                    <img src="../global/left-arrow.svg" />
                                 </button>
                                 <button class="glide__arrow glide__arrow--right arrow" data-glide-dir=">">
-                                    <i class="fa-solid fa-angle-right"></i>
+                                    <img src="../global/right-arrow.svg" />
                                 </button>
                             </div>
                             <div class="glide__bullets" data-glide-el="controls[nav]">
@@ -108,7 +108,7 @@ $(document).ready(function(e){
                 setTimeout(() => {
                     animateGrad(2, 100);
                     //INTRO ARROW 
-                    gsap.to(".intro i", {
+                    gsap.to(".intro svg", {
                         bottom: '30rem',
                         ease: CustomEase.create("custom", "M0,0 C0.333,1.333 0.666,1.333 1,0 "),//CustomEase.create("custom", "M0,0 C0,0.5 0.3,0.8 0.5,0.8 0.7,0.8 1,0.5 1,0 "),
                         duration: 1,
@@ -203,14 +203,14 @@ $(document).ready(function(e){
                 //animation
             $(".pay button").hover(
                 function() {
-                    gsap.to($(".pay i"), {
+                    gsap.to($(".pay img"), {
                         x: '7rem',
                         duration: 0.3,
                         ease: "power2.out",
                     })
                 },
                 function() {
-                    gsap.to($(".pay i"), {
+                    gsap.to($(".pay img"), {
                         x: '0rem',
                         duration: 0.3,
                         ease: "power2.out",
@@ -245,11 +245,8 @@ $(document).ready(function(e){
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             const url = $(entry.target).data("bg");
-                            /*$(entry.target).css("background-image", `url(${$(entry.target).data("bg")})`);
-                            $(entry.target).removeClass("lazy");
-                            observer.unobserve(entry.target);*/
                             $(entry.target).addClass('show-before');
-                            const p = new Promise((resolve, reject) => {
+                            const loadImage = () => {
                                 const img = new Image();
                                 img.src = url;
                                 img.onload = () => {
@@ -257,14 +254,20 @@ $(document).ready(function(e){
                                     $(entry.target).removeClass('show-before');
                                     observer.unobserve(entry.target);
                                 }
-                                img.onerror = (err) => {
-                                    reject(err);
+                               img.onerror = (err) => {
+                                    if (!navigator.onLine) {
+                                        window.addEventListener('online', retryLoad);
+                                    }
                                 }
-                            });
+                            }
+                            const retryLoad = () => {
+                                window.removeEventListener('online', retryLoad);
+                                loadImage();
+                            }
+                            loadImage();
                         }
                     });
                 });
-
                 observer.observe(this);
             });
 

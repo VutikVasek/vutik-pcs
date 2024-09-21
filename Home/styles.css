@@ -59,9 +59,9 @@ body {
   max-height: 100%;
 }
 
-i {
-  font-size: 70rem;
-  color: black;
+img {
+  height: 70rem;
+  width: 70rem;
 }
 
 button, .navbar a, .arrow, .navbar i {
@@ -77,15 +77,18 @@ button, .navbar a, .arrow, .navbar i {
   display: grid;
   place-items: center;
   grid-template-columns: 20% 1fr 1fr 1fr 1fr 1fr 20%;
-  transition: 0.6s ease-out;
+  transition: 0.3s ease-out;
   -webkit-backdrop-filter: blur(15rem);
   backdrop-filter: blur(15rem);
   z-index: 90;
   background-color: transparent;
 }
-.navbar img, .navbar i {
+.navbar img {
   height: calc(clamp(65px, 4vmax, 120px) * 0.6);
-  font-size: calc(clamp(65px, 4vmax, 120px) * 0.6);
+  width: calc(clamp(65px, 4vmax, 120px) * 0.6);
+}
+.navbar .menu-trigger {
+  filter: invert(100%);
 }
 .navbar a {
   font: clamp(17px, 1.5vmax, 45px) "Poppins", sans-serif;
@@ -441,12 +444,14 @@ footer .copyright .right {
   will-change: transform;
   z-index: 1;
 }
-.intro i {
+.intro svg {
+  height: 70rem;
+  width: 60rem;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
-  color: #27CEAF;
+  fill: #27CEAF;
   z-index: 2;
 }
 .intro .background-circle {
@@ -594,7 +599,7 @@ footer .copyright .right {
   width: 50rem;
   height: 50rem;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.7);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -602,12 +607,12 @@ footer .copyright .right {
   text-shadow: none;
   box-shadow: none;
 }
-.showcase .prebuild .pic-carousel .arrow i {
-  font-size: 40rem;
-  color: black;
+.showcase .prebuild .pic-carousel .arrow img {
+  width: 30rem;
+  height: 30rem;
 }
 .showcase .prebuild .pic-carousel .arrow:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 .showcase .prebuild .info {
   width: 100%;
@@ -705,9 +710,9 @@ footer .copyright .right {
   justify-content: center;
   align-items: center;
 }
-.pc-details .card .top .cross i {
+.pc-details .card .top .cross img {
   height: 70rem;
-  font-size: 60rem;
+  width: 70rem;
 }
 .pc-details .card .title {
   width: 100%;
@@ -760,9 +765,12 @@ footer .copyright .right {
   border: 5rem solid black;
   padding: 15rem;
   box-shadow: 0 0 20rem rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
 }
-.pc-details .card .info .pay button i {
-  font-size: 35rem;
+.pc-details .card .info .pay button img {
+  width: 35rem;
+  height: 35rem;
 }
 .pc-details .card .case {
   display: flex;
@@ -792,11 +800,14 @@ footer .copyright .right {
   left: 0;
   z-index: 1;
 }
-.pc-details .close i {
-  height: 50rem;
-  font-size: 40rem;
+.pc-details .close img {
+  width: 40rem;
+  height: 40rem;
 }
-.pc-details .cross i {
+.pc-details .cross img {
+  width: 50rem;
+  height: 50rem;
+  padding: 5rem;
   aspect-ratio: 1;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.3);
@@ -806,7 +817,7 @@ footer .copyright .right {
   align-items: center;
   cursor: pointer;
 }
-.pc-details .cross i:hover {
+.pc-details .cross img:hover {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
