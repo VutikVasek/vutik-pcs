@@ -72,9 +72,9 @@ body {
     max-height: 100%;
 }
 
-i {
-    font-size: 70rem;
-    color: black;
+img {
+    height: 70rem;
+    width: 70rem;
 }
 
 
@@ -92,7 +92,7 @@ button, .navbar a, .arrow, .navbar i {
     display: grid;
     place-items: center;
     grid-template-columns: 20% 1fr 1fr 1fr 1fr 1fr 20%;
-    transition: 0.6s ease-out;
+    transition: 0.3s ease-out;
     -webkit-backdrop-filter: blur(15rem);
             backdrop-filter: blur(15rem);
     z-index: 90;
@@ -102,11 +102,14 @@ button, .navbar a, .arrow, .navbar i {
 
     background-color: transparent;
 
-    img, i {
+    img {
         height: calc($navbar-height * 0.6);
-        font-size: calc($navbar-height * 0.6);
+        width: calc($navbar-height * 0.6);
     }
-
+    
+    .menu-trigger  {
+        filter: invert(100%);
+    }
     
     a {
         font: $h3;

@@ -57,9 +57,9 @@ body {
   max-height: 100%;
 }
 
-i {
-  font-size: 70rem;
-  color: black;
+img {
+  height: 70rem;
+  width: 70rem;
 }
 
 button, .navbar a, .arrow, .navbar i {
@@ -75,15 +75,18 @@ button, .navbar a, .arrow, .navbar i {
   display: grid;
   place-items: center;
   grid-template-columns: 20% 1fr 1fr 1fr 1fr 1fr 20%;
-  transition: 0.6s ease-out;
+  transition: 0.3s ease-out;
   -webkit-backdrop-filter: blur(15rem);
   backdrop-filter: blur(15rem);
   z-index: 90;
   background-color: transparent;
 }
-.navbar img, .navbar i {
+.navbar img {
   height: calc(clamp(65px, 4vmax, 120px) * 0.6);
-  font-size: calc(clamp(65px, 4vmax, 120px) * 0.6);
+  width: calc(clamp(65px, 4vmax, 120px) * 0.6);
+}
+.navbar .menu-trigger {
+  filter: invert(100%);
 }
 .navbar a {
   font: clamp(17px, 1.5vmax, 45px) "Poppins", sans-serif;
