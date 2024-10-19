@@ -82,7 +82,9 @@ $(document).ready(function () {
         "3-normal",
         "4-normal",
         "5-normal",
-        "6-normal"];
+        "6-normal",
+        "about-us-pc"
+    ];
 
     for (let i = 0; i < 5; i++) {
         for (let j = 0; j < 5; j++) {
@@ -135,6 +137,7 @@ $(document).ready(function () {
         $(".pc-showcase > img").fadeOut(500);
         $(".pc-showcase > h2").fadeOut(500);
         $(".pc-showcase > a").fadeOut(500);
+        $(this).css("cursor", "initial");
         gsap.to(this, {
             background: "rgba(0, 0, 0, 0)",
             duration: 0.5,

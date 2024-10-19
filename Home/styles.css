@@ -21,6 +21,7 @@ h1, h2, h3, p, li {
 
 p {
   font: clamp(12px, 0.8vw, 25px) "Inter", sans-serif;
+  line-height: 1.4em;
 }
 
 h1 {
@@ -57,6 +58,10 @@ body {
   background-color: #090920;
   overflow-x: clip;
   max-height: 100%;
+}
+
+main {
+  padding-top: clamp(65px, 4vmax, 120px);
 }
 
 img {
@@ -248,6 +253,7 @@ footer {
   padding: 50rem;
   gap: 50rem;
   width: 100%;
+  box-shadow: 0 0 20rem rgba(0, 0, 0, 0.25);
 }
 footer .about-us {
   display: flex;
@@ -258,6 +264,9 @@ footer .about-us {
 footer .about-us p {
   width: 100%;
 }
+footer .about-us a {
+  color: white;
+}
 footer .copyright {
   width: 100%;
   display: flex;
@@ -267,6 +276,7 @@ footer .copyright {
 }
 footer .copyright .logo {
   height: 35rem;
+  width: 35rem;
 }
 footer .copyright .right {
   margin-left: auto;
@@ -344,11 +354,10 @@ footer .copyright .right {
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh;
-  min-height: 100svh;
+  height: calc(100vh - clamp(65px, 4vmax, 120px));
   width: 100%;
-  padding-top: clamp(65px, 4vmax, 120px);
   position: relative;
+  padding-bottom: 70rem;
 }
 .intro .content {
   padding: 0 100rem;
@@ -683,7 +692,7 @@ footer .copyright .right {
   display: none;
   flex-direction: column;
   padding: 150rem;
-  background: rgba(9, 9, 32, 0.4);
+  background: rgba(9, 9, 32, 0.6);
   z-index: 0;
   position: fixed;
   top: 0;
@@ -810,7 +819,7 @@ footer .copyright .right {
   padding: 5rem;
   aspect-ratio: 1;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.7);
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -818,7 +827,7 @@ footer .copyright .right {
   cursor: pointer;
 }
 .pc-details .cross img:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 @media screen and (min-aspect-ratio: 2.2/1) {
@@ -843,9 +852,6 @@ footer .copyright .right {
   }
 }
 @media screen and (max-aspect-ratio: 1.2/1) {
-  .intro {
-    height: 150vh;
-  }
   .intro .content {
     flex-direction: column;
     padding-bottom: 0rem;
@@ -855,6 +861,11 @@ footer .copyright .right {
   }
   .disclaimer {
     flex-direction: column;
+  }
+  .disclaimer .background {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(to right, #27CEAF 40%, transparent 60%);
+    -webkit-mask: linear-gradient(to bottom, white, transparent);
+            mask: linear-gradient(to bottom, white, transparent);
   }
   .showcase .prebuild {
     width: 80vw;

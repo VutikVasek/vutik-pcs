@@ -19,6 +19,7 @@ h1, h2, h3, p, li {
 
 p {
   font: clamp(12px, 0.8vw, 25px) "Inter", sans-serif;
+  line-height: 1.4em;
 }
 
 h1 {
@@ -55,6 +56,10 @@ body {
   background-color: #090920;
   overflow-x: clip;
   max-height: 100%;
+}
+
+main {
+  padding-top: clamp(65px, 4vmax, 120px);
 }
 
 img {
@@ -246,6 +251,7 @@ footer {
   padding: 50rem;
   gap: 50rem;
   width: 100%;
+  box-shadow: 0 0 20rem rgba(0, 0, 0, 0.25);
 }
 footer .about-us {
   display: flex;
@@ -256,6 +262,9 @@ footer .about-us {
 footer .about-us p {
   width: 100%;
 }
+footer .about-us a {
+  color: white;
+}
 footer .copyright {
   width: 100%;
   display: flex;
@@ -265,6 +274,7 @@ footer .copyright {
 }
 footer .copyright .logo {
   height: 35rem;
+  width: 35rem;
 }
 footer .copyright .right {
   margin-left: auto;
@@ -336,10 +346,6 @@ footer .copyright .right {
 .navbar .order {
   text-decoration: underline;
   text-underline-offset: 5rem;
-}
-
-main {
-  padding-top: clamp(65px, 4vmax, 120px);
 }
 
 .title {
@@ -444,6 +450,7 @@ main {
   overflow: clip;
   background: rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 20rem rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 }
 .content .pc-showcase > img, .content .pc-showcase h2, .content .pc-showcase > a {
   position: absolute;
@@ -490,10 +497,6 @@ main {
      object-fit: cover;
   border-radius: 10rem;
   background: rgba(0, 0, 0, 0.5);
-}
-
-footer {
-  box-shadow: 0 0 20rem rgba(0, 0, 0, 0.25);
 }
 
 /* The switch - the box around the slider */
