@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --nav-height: clamp(-120px, -4vmax, -65px);
 }
@@ -341,5 +342,261 @@ footer .copyright .right {
   body .fslightbox-container .fslightbox-fade-in img, body .fslightbox-container .fslightbox-fade-in-strong img, body .fslightbox-container .fslightbox-fade-out img, body .fslightbox-container div[class=""] img {
     height: 100% !important;
     width: 100% !important;
+  }
+}
+.navbar .about-us {
+  text-decoration: underline;
+  text-underline-offset: 5rem;
+}
+
+.intro {
+  padding: 50rem 150rem;
+  display: flex;
+  flex-direction: row;
+  gap: 100rem;
+}
+.intro .text {
+  display: flex;
+  flex-direction: column;
+  gap: 50rem;
+  flex: 1;
+  min-width: 75%;
+}
+.intro .logo {
+  flex-grow: 1;
+  color: #00D1FF;
+  animation: color-change 20s linear infinite;
+}
+.intro .logo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  padding: 50rem;
+}
+.content h2 {
+  margin: 50rem auto;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.content strong {
+  font: clamp(15px, 1vmax, 30px) "Inter", sans-serif;
+  font-weight: bold;
+}
+.content .cards {
+  width: 100%;
+  display: flex;
+  gap: 50rem;
+}
+.content .card-title {
+  padding: 0 10rem;
+}
+.content .card-title h3 {
+  margin-bottom: 5rem;
+  font-weight: bold;
+  letter-spacing: 2rem;
+}
+.content .card-title p {
+  margin-top: 10rem;
+}
+.content .card {
+  display: flex;
+  gap: 15rem;
+  flex-direction: column;
+  width: 100%;
+  padding: 25rem 15rem;
+  border-radius: 20rem;
+  box-shadow: 0 0 20rem rgba(0, 0, 0, 0.25);
+}
+.content .card.custom {
+  background-color: rgba(39, 206, 175, 0.3);
+}
+.content .card.custom .signs-pic {
+  display: flex;
+  gap: 15rem;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.content .card.custom .signs-pic .signs {
+  display: flex;
+  gap: 15rem;
+  flex-direction: column;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+}
+.content .card.custom .signs-pic a {
+  height: 100%;
+  width: 66%;
+}
+.content .card.custom .signs-pic a .about-us-pc {
+  background: url("../pc-examples/about-us-pc.webp");
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10rem;
+  box-shadow: 0 0 20rem rgba(0, 0, 0, 0.25);
+}
+.content .card.custom .filler {
+  background-image: url("./about-us-filler.webp");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  margin: 0 10rem;
+  flex: 1;
+  border-radius: 10rem;
+}
+.content .card.prebuilds {
+  background-color: rgba(216, 0, 219, 0.3);
+}
+.content .card.values {
+  margin-top: 50rem;
+  background-color: rgba(0, 209, 255, 0.3);
+}
+.content .sign {
+  padding: 10rem;
+  border-radius: 5rem;
+  box-shadow: 0 0 20rem rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.content .sign p {
+  padding: 10rem 0 0 5rem;
+}
+.content .sign::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0.5;
+  z-index: -1;
+  border-radius: 5rem;
+}
+.content .sign.looks::before, .content .sign.rgb::before {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./about-us-filler.webp");
+  background-size: cover;
+  background-position: center;
+}
+.content .sign.price::before, .content .sign.pure::before {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../pc-examples/1-pure.webp");
+  background-size: cover;
+  background-position: 40% 58%;
+  background-size: 150%;
+}
+.content .sign.specs::before, .content .sign.white::before {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../pc-examples/1-white.webp");
+  background-size: cover;
+  background-position: 52% 43%;
+  background-size: 150%;
+}
+.content .sign.graphics::before {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../pc-examples/4-rgb.webp");
+  background-size: cover;
+  background-position: 10% 56%;
+  background-size: 200%;
+}
+.content .sign.mini::before {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../pc-examples/5-mini.webp");
+  background-size: cover;
+  background-position: 25% 50%;
+  background-size: 200%;
+}
+.content .sign.normal::before {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../pc-examples/3-normal.webp");
+  background-size: cover;
+  background-position: 61% 38%;
+  background-size: 170%;
+}
+.content > h3 {
+  margin: 80rem 0 20rem;
+}
+.content ul li::marker {
+  content: "✔ ";
+}
+.content ul li + li {
+  margin-top: 20rem;
+}
+
+@keyframes color-change {
+  from {
+    color: #00D1FF;
+  }
+  10% {
+    color: #00D1FF;
+  }
+  15% {
+    color: transparent;
+  }
+  20% {
+    color: #D800DB;
+  }
+  30% {
+    color: #D800DB;
+  }
+  35% {
+    color: transparent;
+  }
+  40% {
+    color: #27CEAF;
+  }
+  50% {
+    color: #27CEAF;
+  }
+  55% {
+    color: transparent;
+  }
+  60% {
+    color: #3F38FF;
+  }
+  70% {
+    color: #3F38FF;
+  }
+  75% {
+    color: transparent;
+  }
+  80% {
+    color: #88e;
+  }
+  90% {
+    color: #88e;
+  }
+  95% {
+    color: transparent;
+  }
+  100% {
+    color: #00D1FF;
+  }
+}
+.background-circle-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -3;
+  overflow: clip;
+}
+
+@media screen and (max-aspect-ratio: 4/5) {
+  body .intro {
+    padding: 25rem 75rem;
+    flex-direction: column;
+  }
+  body .intro .logo {
+    max-width: 30%;
+    margin: 0 auto;
+  }
+  body .content .cards {
+    flex-direction: column;
+  }
+  body .content .cards .card.custom .signs-pic a {
+    width: 0%;
   }
 }/*# sourceMappingURL=styles.css.map */

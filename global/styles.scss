@@ -18,7 +18,6 @@ $button: clamp(35px, 2vmax, 65px) 'Inter', sans-serif; //45
 $list: clamp(15px, 1vmax, 30px) 'Inter', sans-serif; //20
 //$list: clamp(15px, 1.8vh, 3vmin) 'Inter', sans-serif; //20
 
-
 $padding: 25rem;
 
 :root { --nav-height: clamp(-120px, -4vmax, -65px); }
@@ -44,7 +43,7 @@ h1, h2, h3, p, li {
     padding: 0;
 }
 
-p { font: $p; }
+p { font: $p; line-height: 1.4em; }
 
 h1 { font: $h1; }
 
@@ -71,6 +70,10 @@ body {
     overflow-x: clip;
     max-height: 100%;
 }
+
+main {
+    padding-top: $navbar-height;
+  }
 
 img {
     height: 70rem;
@@ -285,13 +288,19 @@ footer {
     padding: 50rem;
     gap: 50rem;
     width: 100%;
+    box-shadow: $shadow;
 
     .about-us {
         display: flex;
         flex-direction: column;
         gap: 10rem;
         width: 100%;
-        p {width: 100%;}
+        p {
+            width: 100%;
+        }
+        a {
+            color: white;
+        }
     }
 
     .copyright {
@@ -302,6 +311,7 @@ footer {
         justify-content: flex-start;
         .logo {
             height: 35rem;
+            width: 35rem;
 
         }
         .right {

@@ -33,10 +33,12 @@ $(document).ready(function () {
 
 
 function doStuff() {
-    //NAVBAR
+    //NAVBAR and FOoter width
     $(".navbar").css("width", document.body.clientWidth + 'px');
+    $("footer").css("width", document.body.clientWidth + 'px');
     $(window).resize(function () { 
         $(".navbar").css("width", document.body.clientWidth + 'px');
+        $("footer").css("width", document.body.clientWidth + 'px');
     });
 
     //CURSOR FOLLOWER

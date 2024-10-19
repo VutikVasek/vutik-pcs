@@ -4,9 +4,6 @@
   text-decoration: underline;
   text-underline-offset: 5rem;
 }
-main {
-  padding-top: s.$navbar-height;
-}
 .title {
   display: flex;
   flex-direction: column;
@@ -120,6 +117,7 @@ main {
     overflow: clip;
     background: rgba(black, 0.5);
     box-shadow: s.$shadow;
+    cursor: pointer;
     & > img, h2, & > a {
       position: absolute;
       left: 50%;
@@ -171,10 +169,6 @@ main {
       }
     }
   }
-}
-
-footer {
-  box-shadow: s.$shadow;
 }
 
 
