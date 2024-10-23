@@ -1,4 +1,5 @@
-@import "../global/glide.css";
+@import "../global/glide.core.min.css";
+@import "../global/glide.theme.min.css";
 :root {
   --nav-height: clamp(-120px, -4vmax, -65px);
 }
@@ -355,366 +356,284 @@ footer .copyright .right {
     width: 100% !important;
   }
 }
-.navbar .home {
-  text-decoration: underline;
-  text-underline-offset: 5rem;
-}
-
-.intro {
+.pic-carousel {
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: calc(100vh - clamp(65px, 4vmax, 120px));
-  height: calc(100svh - clamp(65px, 4vmax, 120px));
+  justify-content: center;
+  flex-grow: 1;
   width: 100%;
   position: relative;
-  padding-bottom: 70rem;
 }
-.intro .content {
-  padding: 0 100rem;
+.pic-carousel .glide__slides {
+  height: 100%;
+}
+.pic-carousel .glide__slides .glide__slide {
+  height: 100%;
+  width: 100%;
+  padding: 25rem 0;
+}
+.pic-carousel .glide__slides .glide__slide > a {
   width: 100%;
   height: 100%;
   display: flex;
-  gap: 100rem;
-  flex-grow: 1;
+  justify-content: center;
 }
-.intro .content .main-text {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 50rem;
-  gap: 50rem;
-  align-items: center;
-}
-.intro .content .main-text .text {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 50rem;
-  align-items: center;
-}
-.intro .content .main-text h2 {
-  width: 100%;
-}
-.intro .content .main-text h1 {
-  align-self: flex-start;
-  width: 835rem;
-}
-.intro .content .main-text h1 span {
-  font: 110rem/1.15 "Poppins", sans-serif;
-  font-weight: 700;
-  color: transparent;
-  white-space: pre;
-}
-.intro .content .main-text h1 .text-grad-1 {
-  background: linear-gradient(to right, #3F38FF, #00D1FF, #3F38FF);
-  background-size: 200%;
-  background-position: 0%;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-.intro .content .main-text h1 .text-grad-2 {
-  background: linear-gradient(to right, #D800DB, #88e, #27CEAF, #88e, #D800DB);
-  background-size: 200%;
-  background-position: 0%;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-.intro .content .main-text .buttons {
-  display: flex;
-  gap: 50rem;
-}
-.intro .content .main-text .buttons button {
-  text-align: center;
-  font: clamp(35px, 2vmax, 65px) "Inter", sans-serif;
-  padding: 25rem 75rem;
-  border-radius: 20rem;
-  border: 3rem solid transparent;
-  color: #FFF;
-  position: relative;
-}
-.intro .content .main-text .buttons a:nth-child(1) button {
-  --tint: 50%;
-  background: linear-gradient(rgba(9, 9, 32, var(--tint)), rgba(9, 9, 32, var(--tint))), linear-gradient(#090920 calc(var(--tint) - 50%), transparent), linear-gradient(100deg, #D800DB, #00D1FF), linear-gradient(rgba(9, 9, 32, calc(var(--tint) + 40%)), transparent), linear-gradient(100deg, #D800DB, #00D1FF);
-  box-shadow: inset 0 0 30rem rgba(63, 56, 255, 0.25);
-  background-clip: padding-box, padding-box, padding-box, border-box, border-box;
-  background-origin: border-box;
-}
-.intro .content .main-text .buttons a:nth-child(2) button {
-  --tint: 50%;
-  background: linear-gradient(rgba(9, 9, 32, var(--tint)), rgba(9, 9, 32, var(--tint))), linear-gradient(#090920 calc(var(--tint) - 50%), transparent), linear-gradient(100deg, #27CEAF, #3F38FF), linear-gradient(rgba(9, 9, 32, calc(var(--tint) + 30%)), transparent), linear-gradient(100deg, #27CEAF, #3F38FF);
-  box-shadow: inset 0 0 30rem rgba(0, 209, 255, 0.25);
-  background-clip: padding-box, padding-box, padding-box, border-box, border-box;
-  background-origin: border-box;
-}
-.intro .content .main-pc {
-  width: 100%;
-  flex-grow: 1;
-  position: relative;
-  overflow: hidden;
-}
-.intro .content .main-pc .parallax {
-  width: 100%;
+.pic-carousel .glide__slides .glide__slide .prebuild-pic {
   height: 100%;
-  background-image: url("./main-pc.webp");
+  width: 90%;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   transform-origin: center;
-  will-change: transform;
-  z-index: 1;
-}
-.intro svg {
-  height: 70rem;
-  width: 60rem;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-  fill: #27CEAF;
-  z-index: 2;
-}
-.intro .background-circle {
-  bottom: -70rem;
-}
-
-.disclaimer {
-  display: flex;
-  padding: 50rem 100rem;
-  gap: 100rem;
-  align-items: center;
-  position: relative;
-  /*background: 
-      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      linear-gradient(to right, transparent, s.$cyan 0%);*/
-}
-.disclaimer .background {
-  height: 100%;
-  width: 200%;
-  left: -100%;
-  top: 0;
-  position: absolute;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(to right, #27CEAF 10%, transparent 30%);
-  z-index: -1;
-}
-.disclaimer .title {
-  color: #00D1FF;
-  font: clamp(35px, 2vmax, 65px) "Inter", sans-serif;
-  font-weight: 600;
-}
-.disclaimer .text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 50rem;
-}
-.disclaimer .text .pictures {
-  display: flex;
-  flex-direction: column;
-  gap: 25rem;
-}
-.disclaimer .text .pictures p {
-  padding-left: 50rem;
-}
-
-.showcase-wrapper::before {
-  content: "";
-  position: absolute;
-  width: 100vw;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: linear-gradient(to top right, rgba(63, 56, 255, 0.5) -20%, rgba(39, 206, 175, 0.5) 100%);
-  z-index: 0;
-}
-
-.showcase {
-  display: flex;
-  padding: 25rem 300rem;
-  height: 100vh;
-  height: 100svh;
-  gap: 100rem;
-  width: -moz-fit-content;
-  width: fit-content;
-  position: relative;
-}
-.showcase .prebuild {
-  width: 520rem;
-  height: 100%;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.showcase .prebuild .name {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 25rem;
-  gap: 25rem;
-  border-radius: 20rem;
-  background-color: #090920;
-  box-shadow: 0 0 20rem rgba(0, 0, 0, 0.25);
-}
-.showcase .prebuild .info {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 25rem;
-  gap: 25rem;
-  border-radius: 20rem;
-  background-color: #090920;
-  box-shadow: 0 0 20rem rgba(0, 0, 0, 0.25);
-}
-.showcase .prebuild .info .stats {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 15rem;
-}
-.showcase .prebuild .info .stats .stat {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 4rem;
-}
-.showcase .prebuild .info .stats .stat .bar {
-  width: 100%;
-  height: 8rem;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 20rem;
+  filter: drop-shadow(0 0 20rem rgba(0, 0, 0, 0.25));
   overflow: hidden;
 }
-.showcase .prebuild .info .stats .stat .bar div {
-  width: 0%;
+.pic-carousel .glide__slides .glide__slide .prebuild-pic::before {
+  display: block;
+  position: absolute;
+  content: none;
+  width: 25%;
+  aspect-ratio: 1;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  background: linear-gradient(rgba(0, 0, 0, 0) 10%, rgba(0, 209, 255, 0.8));
+  border-radius: 50%;
+  -webkit-mask-image: radial-gradient(transparent 45%, black 50%, black 60%, transparent 65%);
+  mask-image: radial-gradient(transparent 45%, black 50%, black 60%, transparent 65%);
+  animation: loading 2s linear infinite;
+}
+.pic-carousel .glide__slides .glide__slide .prebuild-pic.show-before::before {
+  content: "";
+}
+.pic-carousel .glide__bullets {
+  bottom: 10rem;
+}
+.pic-carousel.glide {
+  max-width: 100%;
   height: 100%;
-  background: #00D1FF;
 }
-.showcase .prebuild .info .prices {
-  display: flex;
-  gap: 25rem;
-  width: 100%;
-}
-.showcase .prebuild .info .prices button {
-  height: calc(3 * clamp(12px, 0.8vw, 25px));
-  width: 100%;
+.pic-carousel .arrow {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10rem;
-  font: clamp(12px, 0.8vw, 25px) "Inter", sans-serif;
-  padding: 15rem 0;
-  font-weight: 600;
+  width: 50rem;
+  height: 50rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  text-shadow: none;
+  box-shadow: none;
 }
-.showcase .prebuild .info .prices button:hover {
-  font-weight: 900;
+.pic-carousel .arrow img {
+  width: 30rem;
+  height: 30rem;
+}
+.pic-carousel .arrow:hover {
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
-@keyframes loading {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  background: none transparent !important;
 }
+
+.pc-details, .theme-prices {
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  padding: 150rem;
+  background: rgba(9, 9, 32, 0.6);
+  z-index: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+}
+.pc-details .card, .theme-prices .card {
+  height: 100%;
+  width: 100%;
+  max-height: 100svh;
+  border-radius: 20rem;
+  display: flex;
+  padding: 25rem;
+  gap: 25rem;
+  z-index: 2;
+  box-shadow: 0 0 20rem rgba(0, 0, 0, 0.25);
+  --accent: #f00;
+  background-color: #f00;
+}
+.pc-details .card > *, .theme-prices .card > * {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25rem;
+}
+.pc-details .card .info .components, .theme-prices .card .info .components {
+  width: 100%;
+  flex-grow: 1;
+  border-radius: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 25rem;
+  padding: 25rem;
+  background: rgba(9, 9, 32, 0.4);
+}
+.pc-details .card .info .components h3, .theme-prices .card .info .components h3 {
+  text-align: center;
+}
+.pc-details .card .top, .theme-prices .card .top {
+  display: flex;
+}
+.pc-details .card .top .cross, .theme-prices .card .top .cross {
+  height: 100%;
+  aspect-ratio: 1;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.pc-details .card .top .cross img, .theme-prices .card .top .cross img {
+  height: 70rem;
+  width: 70rem;
+}
+.pc-details .card .title, .theme-prices .card .title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+  padding: 25rem;
+  background: var(--accent);
+  border-radius: 20rem;
+  border: 5rem solid black;
+  box-shadow: 0 0 20rem rgba(0, 0, 0, 0.25);
+}
+.pc-details .card .title > *, .theme-prices .card .title > * {
+  color: black;
+}
+.pc-details .close, .theme-prices .close {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+}
+.pc-details .close img, .theme-prices .close img {
+  width: 40rem;
+  height: 40rem;
+}
+.pc-details .cross img, .theme-prices .cross img {
+  width: 50rem;
+  height: 50rem;
+  padding: 5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.pc-details .cross img:hover, .theme-prices .cross img:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.pc-details .card {
+  flex-direction: row-reverse;
+}
+.pc-details .card .info .pay {
+  width: 100%;
+  display: flex;
+  gap: 25rem;
+  align-items: center;
+}
+.pc-details .card .info .pay h3 {
+  color: black;
+}
+.pc-details .card .info .pay button {
+  flex-grow: 1;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 20rem;
+  border: 5rem solid black;
+  padding: 15rem;
+  box-shadow: 0 0 20rem rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+}
+.pc-details .card .info .pay button img {
+  width: 35rem;
+  height: 35rem;
+}
+.pc-details .card .case .pic-container {
+  height: 100%;
+  width: 100%;
+}
+.pc-details .card .case .pic-container .img {
+  height: 100%;
+  width: auto;
+  background-image: url("../global/default.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform-origin: center;
+  border-radius: 20rem;
+  filter: drop-shadow(0 0 20rem rgba(0, 0, 0, 0.25));
+}
+
+.theme-prices .carousel-container {
+  height: 100%;
+}
+.theme-prices .examples-text {
+  margin: 0 auto;
+  font: clamp(15px, 1vmax, 30px) "Inter", sans-serif;
+  font-weight: 700;
+}
+.theme-prices .info .buttons {
+  display: flex;
+  gap: 25rem;
+}
+.theme-prices .info .buttons button {
+  width: 100%;
+  background: var(--accent);
+  border-radius: 20rem;
+  border: 5rem solid black;
+  color: black;
+  padding: 15rem;
+  box-shadow: 0 0 20rem rgba(0, 0, 0, 0.25);
+  font: clamp(17px, 1.5vmax, 45px) "Poppins", sans-serif;
+  transition: 300ms;
+}
+
 @media screen and (min-aspect-ratio: 2.2/1) {
-  .pc-details {
+  .pc-details, .theme-prices {
     padding: 75rem;
   }
 }
-@media screen and (min-aspect-ratio: 2.35/1) {
-  body .intro .content .main-text {
-    flex-direction: row;
-  }
-  body .intro .content .main-text .buttons {
-    flex-direction: column;
-  }
-}
 @media screen and (min-aspect-ratio: 2.35/1) and (max-width: 2300px) {
-  .pc-details {
+  .pc-details, .theme-prices {
     padding: 0rem;
   }
-  .pc-details .card .top .cross {
+  .pc-details .card .top .cross, .theme-prices .card .top .cross {
     display: flex;
-  }
-}
-@media screen and (max-aspect-ratio: 1.2/1) {
-  .intro .content {
-    flex-direction: column;
-    padding-bottom: 0rem;
-    /*.buttons {
-        //flex-direction: column;
-    }*/
-  }
-  .disclaimer {
-    flex-direction: column;
-  }
-  .disclaimer .background {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(to right, #27CEAF 40%, transparent 60%);
-    -webkit-mask: linear-gradient(to bottom, white, transparent);
-            mask: linear-gradient(to bottom, white, transparent);
-  }
-  .showcase .prebuild {
-    width: 80vw;
-    /*.glide__slide  {
-        width: 100vw;
-    }*/
   }
 }
 @media screen and (max-aspect-ratio: 1/1) {
-  .pc-details {
+  .pc-details, .theme-prices {
     padding: 0;
     background: black;
   }
-  .pc-details .card {
+  .pc-details .card, .theme-prices .card {
     flex-direction: column;
   }
-  .pc-details .card .top .cross {
-    display: flex;
-  }
-  body .showcase {
-    flex-direction: column;
-    width: 100%;
-    padding: 50rem;
-    align-items: center;
-    height: auto;
-  }
-  body .showcase .prebuild {
-    height: 80vh;
-  }
-}
-@media screen and (max-aspect-ratio: 1/1.45) {
-  body .intro .content {
-    gap: 0;
-    padding: 0;
-  }
-  body .intro .content .main-text .text > * {
-    width: auto;
-    text-align: center;
-  }
-  body .intro .content .buttons {
-    flex-direction: column;
-  }
-  body .intro .content .buttons button {
+  .pc-details .card > *, .theme-prices .card > * {
     width: 100%;
   }
-  body .intro .content .main-pc {
-    padding: 0 40rem;
-  }
-}
-@media screen and (max-aspect-ratio: 1/1.75) {
-  body .intro {
-    height: 120vh;
-  }
-  body .intro .content .main-text .text h1 {
-    margin: 0 auto;
+  .pc-details .card .top .cross, .theme-prices .card .top .cross {
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 0;
-    /*span {
-        align-self: flex-end;
-    }*/
+  }
+  .theme-prices .card {
+    flex-direction: column-reverse;
   }
 }/*# sourceMappingURL=styles.css.map */

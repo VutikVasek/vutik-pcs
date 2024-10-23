@@ -73,6 +73,17 @@ button, .navbar a, .arrow, .navbar i {
   -webkit-tap-highlight-color: transparent;
 }
 
+iframe {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100svh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  border: none;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -453,6 +464,9 @@ footer .copyright .right {
 .content .card.prebuilds {
   background-color: rgba(216, 0, 219, 0.3);
 }
+.content .card.prebuilds .sign {
+  cursor: pointer;
+}
 .content .card.values {
   margin-top: 50rem;
   background-color: rgba(0, 209, 255, 0.3);
@@ -464,6 +478,7 @@ footer .copyright .right {
   position: relative;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
 }
 .content .sign p {
   padding: 10rem 0 0 5rem;
@@ -478,6 +493,13 @@ footer .copyright .right {
   opacity: 0.5;
   z-index: -1;
   border-radius: 5rem;
+  transition: 0.3s;
+}
+.content .sign:hover {
+  transform: scale(1.1);
+}
+.content .sign:hover::before {
+  opacity: 1;
 }
 .content .sign.looks::before, .content .sign.rgb::before {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./about-us-filler.webp");
