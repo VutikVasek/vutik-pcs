@@ -80,12 +80,21 @@ img {
     width: 70rem;
 }
 
-
 button, .navbar a, .arrow, .navbar i {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }
 
+iframe {
+    width: 100vw;
+    height: 100vh;
+    max-height: 100svh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    border: none;
+}
 
 .navbar {
     position: fixed;

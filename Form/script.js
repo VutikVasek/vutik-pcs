@@ -156,7 +156,7 @@ $(document).ready(function () {
 
     $(".tile").hover(function() {
         gsap.to(this, {
-          scale: 2.5,
+          scale: 2,
           objectFit: "contain",
           zIndex: 10,
           duration: 0.2,

@@ -21,3 +21,12 @@ $(document).ready(function () {
         $(".content").css("width", document.body.clientWidth + 'px');
     });
 });
+
+function preventTouchScroll(event) {
+    event.preventDefault();
+}
+
+$(".prebuilds .sign").click(function (e) {
+    openFrame(`../generator/?theme=${$(this).attr("class").split(" ")[1]}&type=theme`)
+})
+  

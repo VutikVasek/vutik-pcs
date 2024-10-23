@@ -1,0 +1,235 @@
+@use "../global/styles" as s;
+@use "../global/glide";
+
+body {
+    background: none transparent !important;
+}
+
+.pc-details, .theme-prices {
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    padding: 150rem;
+    background: rgba(s.$background, 0.6);
+    //background: none transparent !important;
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    .card {
+        height: 100%;
+        width: 100%;
+        max-height: 100svh;
+        border-radius: s.$roundness;
+        display: flex;
+        padding: 25rem;
+        gap: 25rem;
+        z-index: 2;
+        box-shadow: s.$shadow;
+        --accent: #f00;
+        
+        background-color: #f00;
+        & > * {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 25rem;
+
+        }
+        .info {
+            .components {
+                width: 100%;
+                flex-grow: 1;
+                border-radius: s.$roundness;
+                display: flex;
+                flex-direction: column;
+                gap: 25rem;
+                padding: 25rem;
+                //padding-left: 0;
+                background: rgba(s.$background, 0.4);
+                h3 {
+                    text-align: center;
+                }
+            }
+        }
+        .top {
+            display: flex;
+            .cross {
+                height: 100%;
+                aspect-ratio: 1;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                img {
+                    height: 70rem;
+                    width: 70rem;
+                }
+            }
+        }
+        .title {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10rem;
+            padding: 25rem;
+            background: var(--accent);
+            border-radius: s.$roundness;
+            border: 5rem solid black;
+            box-shadow: s.$shadow;
+            & > * {
+                color: black;
+            }
+        }
+    }
+    .close {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        //translate: -50% -50%;
+        z-index: 1;
+        img {
+            width: 40rem;
+            height: 40rem;
+        }
+    }
+
+    .cross {
+        img {
+            width: 50rem;
+            height: 50rem;
+            padding: 5rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: rgba(white, 0.7);
+            margin: 0 auto;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            &:hover {
+                background-color: rgba(white, 0.9);
+            }
+        }
+
+    }
+}
+
+.pc-details {
+    .card {
+        flex-direction: row-reverse;
+        .info {
+            .pay {
+                width: 100%;
+                    display: flex;
+                    gap: 25rem;
+                    align-items: center;
+                    h3 {
+                        color: black;
+                    }
+                    button {
+                        flex-grow: 1;
+                        height: 100%;
+                        background: var(--accent);
+                        border-radius: s.$roundness;
+                        border: 5rem solid black;
+                        padding: 15rem;
+                        box-shadow: s.$shadow;
+                        display: flex;
+                        justify-content: center;
+                        img {
+                            width: 35rem;
+                            height: 35rem;
+                        }
+                    }
+            }
+        }
+
+        .case {
+            .pic-container {
+                height: 100%;
+                width: 100%;
+                
+                .img {
+                    height: 100%;
+                    width: auto;
+                    background-image: url("../global/default.webp");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    transform-origin: center;
+                    border-radius: s.$roundness;
+                    -webkit-filter: drop-shadow(s.$shadow);
+                            filter: drop-shadow(s.$shadow);
+                }
+            }
+        }
+    }
+}
+
+.theme-prices {
+    .carousel-container {
+        height: 100%;
+    }
+    .examples-text {
+        margin: 0 auto;
+        font: s.$list;
+        font-weight: 700;
+    }
+    .info {
+        .buttons {
+            display: flex;
+            gap: 25rem;
+            button {
+                width: 100%;
+                background: var(--accent);
+                border-radius: s.$roundness;
+                border: 5rem solid black;
+                color: black;
+                padding: 15rem;
+                box-shadow: s.$shadow;
+                font: s.$h3;
+                transition: 300ms;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-aspect-ratio: 2.2/1) {
+    .pc-details, .theme-prices {
+        padding: 75rem;
+    }
+}
+
+@media screen and (min-aspect-ratio: 2.35/1) {
+    @media all and (max-width: 2300px) {
+        .pc-details, .theme-prices {
+            padding: 0rem;
+            .card .top .cross {
+                display: flex;
+            }
+        }
+    }
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+    .pc-details, .theme-prices {
+        padding: 0;
+        background: black;
+        .card {
+            flex-direction: column;
+            & > * {
+                width: 100%;
+            }
+            .top .cross {
+                display: flex;
+            }
+        }
+
+    }
+    .theme-prices .card {
+        flex-direction: column-reverse;
+    }
+}

@@ -6,7 +6,7 @@ $(document).ready(function(e){
     //LOADING PREBUILDS
     
 
-    fetch('./prebuilds.json')
+    fetch('../global/prebuilds.json')
         .then(response => response.json())
         .then(data => {
             const prebuilds = `
@@ -55,11 +55,7 @@ $(document).ready(function(e){
                             </div>
                             <div class="prices">
                                 ${prebuild.builds.map((build, index) => `
-                                    <button onclick="openDetails('${prebuild.name}', '${prebuild.description}', '${build.price}',
-                                                                 '${prebuild.style.dark}', '${prebuild.style.light}',
-                                                                 '${prebuild.style.accent}', '${prebuild.style.text[0]}',
-                                                                  ${JSON.stringify(build.components).replace(/"/g, "'")},
-                                                                 '${build.case.replace(/\s/g, " ")}')" style="
+                                    <button onclick="openDetails('${prebuild.key}', ${index})" style="
                                         color: ${prebuild.style.text[index]}; 
                                         background: linear-gradient(to right,
                                             ${prebuild.style.dark} ${-index*100}%,
@@ -319,36 +315,6 @@ function preventTouchScroll(event) {
 }
     
 //open
-function openDetails(name, description, price, dark, light, accent, text, components, pic) {
-    $(".pc-details").css("height", window.innerHeight + "px");
-    $(".pc-details .card").css("background", `linear-gradient(to top right, ${dark}, ${light})`)
-                            .css("--accent", accent);
-    $(".pc-details .info .title h3").text(`${name} - ${price}`);
-    $(".pc-details .info .title p").text(description);
-    $(".pc-details ul").html(
-        components.map(li => `<li>${li}</li>`).join("")
-    );
-    $(".pc-details .pay h3").css("color", text);
-    $(".pc-details .price").text(price);
-    //$(".pc-details .img").css("background-image", `url(${pic})`);
-    //$(".pc-details case a").attr("href", `url(${pic})`);
-    //refreshFsLightbox();
-    $(".pc-details").css("display", "flex");
-    $(".navbar").css('top', 'clamp(-120px, -4vw, -65px)');
-    $("html").css("overflow", "hidden");
-    window.addEventListener('touchmove', preventTouchScroll, { passive: false });
-
-    gsap.fromTo('.pc-details', {
-        opacity: 0,
-    }, {
-        opacity: 1,
-        duration: 0.2,
-    });
-    gsap.fromTo($(".pc-details .card"), {
-        scale: 0,
-    }, {
-        scale: 1,
-        duration: 0.2,
-        ease: 'power4.out'
-    })
+function openDetails(theme, price) {
+    openFrame(`../generator/?theme=${theme}&type=prebuild&price=${price}`);
 }

@@ -1,3 +1,5 @@
+@import "../global/glide.core.min.css";
+@import "../global/glide.theme.min.css";
 :root {
   --nav-height: clamp(-120px, -4vmax, -65px);
 }
@@ -70,17 +72,6 @@ img {
 button, .navbar a, .arrow, .navbar i {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-}
-
-iframe {
-  width: 100vw;
-  height: 100vh;
-  max-height: 100svh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 50;
-  border: none;
 }
 
 .navbar {
@@ -353,4 +344,82 @@ footer .copyright .right {
     height: 100% !important;
     width: 100% !important;
   }
-}/*# sourceMappingURL=styles.css.map */
+}
+.pic-carousel {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+  position: relative;
+}
+.pic-carousel .glide__slides {
+  height: 100%;
+}
+.pic-carousel .glide__slides .glide__slide {
+  height: 100%;
+  width: 100%;
+  padding: 25rem 0;
+}
+.pic-carousel .glide__slides .glide__slide > a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.pic-carousel .glide__slides .glide__slide .prebuild-pic {
+  height: 100%;
+  width: 90%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform-origin: center;
+  filter: drop-shadow(0 0 20rem rgba(0, 0, 0, 0.25));
+  overflow: hidden;
+}
+.pic-carousel .glide__slides .glide__slide .prebuild-pic::before {
+  display: block;
+  position: absolute;
+  content: none;
+  width: 25%;
+  aspect-ratio: 1;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  background: linear-gradient(rgba(0, 0, 0, 0) 10%, rgba(0, 209, 255, 0.8));
+  border-radius: 50%;
+  -webkit-mask-image: radial-gradient(transparent 45%, black 50%, black 60%, transparent 65%);
+  mask-image: radial-gradient(transparent 45%, black 50%, black 60%, transparent 65%);
+  animation: loading 2s linear infinite;
+}
+.pic-carousel .glide__slides .glide__slide .prebuild-pic.show-before::before {
+  content: "";
+}
+.pic-carousel .glide__bullets {
+  bottom: 10rem;
+}
+.pic-carousel.glide {
+  max-width: 100%;
+  height: 100%;
+}
+.pic-carousel .arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50rem;
+  height: 50rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  text-shadow: none;
+  box-shadow: none;
+}
+.pic-carousel .arrow img {
+  width: 30rem;
+  height: 30rem;
+}
+.pic-carousel .arrow:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}/*# sourceMappingURL=glide.css.map */
