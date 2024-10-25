@@ -336,7 +336,7 @@ footer .copyright .right {
   body .fslightbox-container .fslightbox-nav .fslightbox-toolbar .fslightbox-toolbar-button {
     width: unset;
     height: unset;
-    padding: 100rem 75rem;
+    padding: 108rem 83rem;
   }
   body .fslightbox-container .fslightbox-nav .fslightbox-slide-number-container {
     padding: 75rem 0;
@@ -478,7 +478,8 @@ footer .copyright .right {
   position: relative;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.5);
-  transition: 0.3s;
+  opacity: 0;
+  transform: translateY(50rem);
 }
 .content .sign p {
   padding: 10rem 0 0 5rem;
@@ -494,9 +495,6 @@ footer .copyright .right {
   z-index: -1;
   border-radius: 5rem;
   transition: 0.3s;
-}
-.content .sign:hover {
-  transform: scale(1.1);
 }
 .content .sign:hover::before {
   opacity: 1;

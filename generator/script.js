@@ -102,14 +102,17 @@ function open(type, pb, build = 0) {
         if (!index) {
             $(button).css("font-weight", 600);
             $(button).css("background","rgba(255, 255, 255, 0.7)");
-            $(button).css("transform", "scale(1.1)");
+            $(button).css("scale", "1.1");
+            $(button).addClass("active");
         } 
         button.textContent = pb.builds[index].price;
-        $(button).hover(() => changeComponenets(button, index, pb.builds[index].components));
-    }).each((index, button) => {
+        $(button).hover(() => changeComponenets(button, index, pb.builds[index].components), () => {});
         $(button).click(() => {
-            window.location = `?theme=${pb.key}&type=prebuild&price=${index}`;
-        })
+            if (window.matchMedia("(pointer: fine)").matches || $(button).css("scale") == 1.1)
+                openFrame(`./?theme=${pb.key}&type=prebuild&price=${index}`);
+            else 
+                changeComponenets(button, index, pb.builds[index].components);
+        });
     });
     $(".info ul").html(
         pb.builds[build].components.map(li => `<li>${li}</li>`).join("")
@@ -163,6 +166,23 @@ function open(type, pb, build = 0) {
         duration: 0.2,
         ease: 'power4.out'
     });
+
+    $(".pay button").hover(
+        function() {
+            gsap.to($(".pay img"), {
+                x: '7rem',
+                duration: 0.3,
+                ease: "power2.out",
+            })
+        },
+        function() {
+            gsap.to($(".pay img"), {
+                x: '0rem',
+                duration: 0.3,
+                ease: "power2.out",
+            })
+        }
+    )
     
      refreshFsLightbox();
 }
@@ -171,7 +191,11 @@ function changeComponenets(button, i, comps) {
     $(".theme-prices .buttons").children().each((index, button) => {
         $(button).css("font-weight", index === i ? 600 : 400);
         $(button).css("background", index === i ? "rgba(255, 255, 255, 0.7)" : "");
-        $(button).css("transform", index === i ? "scale(1.1)" : "scale(1)");
+        $(button).css("scale", index === i ? "1.1" : "1");
+        if (index === i) 
+            $(button).addClass("active");
+        else 
+            $(button).removeClass("active");    
     });
     $(".theme-prices .info ul").html(
         comps.map(li => `<li>${li}</li>`).join("")

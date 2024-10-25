@@ -20,6 +20,40 @@ $(document).ready(function () {
     $(window).resize(function () { 
         $(".content").css("width", document.body.clientWidth + 'px');
     });
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                gsap.to(entry.target, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: 'power2.out'
+                });
+                observer.unobserve(entry.target);
+            }
+        })
+    },  {
+       threshold: 0.1 
+    });
+
+    $(".sign").each(function() {
+        observer.observe(this);
+    });
+
+    $(".prebuilds .sign").hover(function() {
+        gsap.to(this, {
+            scale: 1.05,
+            duration: 0.3,
+            ease: 'power2.out'
+        })
+    }, function() {
+        gsap.to(this, {
+            scale: 1,
+            duration: 0.3,
+            ease: 'power2.out'
+        })
+    })
 });
 
 function preventTouchScroll(event) {

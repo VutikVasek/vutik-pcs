@@ -161,7 +161,7 @@ $(document).ready(function(e){
             $(window).scroll(function(e) {
                 let currentScrollTop = $(this).scrollTop();
 
-                if (currentScrollTop < lastScrollTop && horizontal.progress() <= 0.05 || currentScrollTop < 10) {
+                if (currentScrollTop < lastScrollTop && (horizontal.progress() <= 0.05 || window.matchMedia("(max-aspect-ratio: 1/1)").matches) || currentScrollTop < 10) {
                     // Scroll Up - show navbar
                     $('.navbar').css('top', '0');
                 }
@@ -179,52 +179,6 @@ $(document).ready(function(e){
                 if (!window.matchMedia("(max-aspect-ratio: 1.2/1)").matches)
                     $(".parallax").css("transform", `translate(0%, ${currentScrollTop * 0.5}px)`);
             });
-
-            //PC DETAILS
-                //close
-            $(".cross").click(function (e) { 
-                e.preventDefault();
-                $(this).parents(".pc-details").css("display", "none");
-                $("html").css("overflow", "");
-                window.removeEventListener('touchmove', preventTouchScroll, { passive: false });
-            });
-            $(".pc-details").click(function(e) {
-                e.preventDefault();
-                if (e.target === this) {
-                    $(this).css("display", "none");
-                    $("html").css("overflow", "");
-                    window.removeEventListener('touchmove', preventTouchScroll, { passive: false });
-                }
-            });
-                //animation
-            $(".pay button").hover(
-                function() {
-                    gsap.to($(".pay img"), {
-                        x: '7rem',
-                        duration: 0.3,
-                        ease: "power2.out",
-                    })
-                },
-                function() {
-                    gsap.to($(".pay img"), {
-                        x: '0rem',
-                        duration: 0.3,
-                        ease: "power2.out",
-                    })
-                }
-            )
-                //close button
-
-            $(window).mousemove(function (e) { 
-                gsap.to('.close', {
-                    x: e.clientX,
-                    y: e.clientY,
-                    translate: "-50% -50%",
-                    duration: 0.3,
-                    ease: 'sine.out',
-                });
-            });
-
 
             //CAROUSEL
             $(".glide").each(function() {
