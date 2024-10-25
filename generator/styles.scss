@@ -49,6 +49,7 @@ body {
                 padding: 25rem;
                 //padding-left: 0;
                 background: rgba(s.$background, 0.4);
+                box-shadow: s.$shadow;
                 h3 {
                     text-align: center;
                 }
@@ -190,7 +191,16 @@ body {
                 padding: 15rem;
                 box-shadow: s.$shadow;
                 font: s.$h3;
-                transition: 300ms;
+                transition: scale 300ms;
+            }
+
+            .active {
+                &::after {
+                    content: ">";
+                    width: 0;
+                    display: inline-flex;
+                    margin-left: 5rem;
+                }
             }
         }
     }

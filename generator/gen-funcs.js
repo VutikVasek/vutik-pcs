@@ -20,9 +20,18 @@ function openFrame(url) {
 $(window).on('message', function(event) {
     const message = event.originalEvent.data;
     if (message === 'close-iframe') {
-      $('iframe').remove();
-      $("html").css("overflow", "");
-      $(".filter").css("z-index", "-1");
-      window.removeEventListener('touchmove', preventTouchScroll, { passive: false });
+        gsap.fromTo($('iframe'), {
+            opacity: 1,
+        }, {
+            opacity: 0,
+            duration: 0.1,
+            ease: "sine.inOut",
+            onComplete: function() {
+                $('iframe').remove();
+                $("html").css("overflow", "");
+                $(".filter").css("z-index", "-1");
+                window.removeEventListener('touchmove', preventTouchScroll, { passive: false });
+            },
+        });
     }
 });

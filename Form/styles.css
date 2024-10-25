@@ -72,6 +72,17 @@ button, .navbar a, .arrow, .navbar i {
   -webkit-tap-highlight-color: transparent;
 }
 
+iframe {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100svh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  border: none;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -324,7 +335,7 @@ footer .copyright .right {
   body .fslightbox-container .fslightbox-nav .fslightbox-toolbar .fslightbox-toolbar-button {
     width: unset;
     height: unset;
-    padding: 100rem 75rem;
+    padding: 108rem 83rem;
   }
   body .fslightbox-container .fslightbox-nav .fslightbox-slide-number-container {
     padding: 75rem 0;

@@ -337,7 +337,7 @@ footer .copyright .right {
   body .fslightbox-container .fslightbox-nav .fslightbox-toolbar .fslightbox-toolbar-button {
     width: unset;
     height: unset;
-    padding: 100rem 75rem;
+    padding: 108rem 83rem;
   }
   body .fslightbox-container .fslightbox-nav .fslightbox-slide-number-container {
     padding: 75rem 0;
@@ -480,6 +480,7 @@ body {
   gap: 25rem;
   padding: 25rem;
   background: rgba(9, 9, 32, 0.4);
+  box-shadow: 0 0 20rem rgba(0, 0, 0, 0.25);
 }
 .pc-details .card .info .components h3, .theme-prices .card .info .components h3 {
   text-align: center;
@@ -603,7 +604,13 @@ body {
   padding: 15rem;
   box-shadow: 0 0 20rem rgba(0, 0, 0, 0.25);
   font: clamp(17px, 1.5vmax, 45px) "Poppins", sans-serif;
-  transition: 300ms;
+  transition: scale 300ms;
+}
+.theme-prices .info .buttons .active::after {
+  content: ">";
+  width: 0;
+  display: inline-flex;
+  margin-left: 5rem;
 }
 
 @media screen and (min-aspect-ratio: 2.2/1) {
