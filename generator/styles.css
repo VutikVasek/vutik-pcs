@@ -613,17 +613,22 @@ body {
   margin-left: 5rem;
 }
 
-@media screen and (min-aspect-ratio: 2.2/1) {
+@media screen and (min-aspect-ratio: 2.1/1) {
   .pc-details, .theme-prices {
-    padding: 75rem;
+    padding: 100rem;
   }
 }
-@media screen and (min-aspect-ratio: 2.35/1) and (max-width: 2300px) {
+@media screen and (min-aspect-ratio: 2.4/1) and (max-width: 2300px) {
   .pc-details, .theme-prices {
-    padding: 0rem;
+    padding: 50rem;
   }
   .pc-details .card .top .cross, .theme-prices .card .top .cross {
     display: flex;
+  }
+}
+@media screen and (min-aspect-ratio: 2.8/1) {
+  .pc-details, .theme-prices {
+    padding: 0;
   }
 }
 @media screen and (max-aspect-ratio: 1/1) {
