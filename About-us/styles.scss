@@ -44,22 +44,22 @@
         gap: 50rem;
     }
     .card-title {
-        padding: 0 10rem;
+        padding: 0 15rem;
         h3 {
             margin-bottom: 5rem;
             font-weight: bold;
             letter-spacing: 2rem;
         }
         p {
-            margin-top: 10rem;
+            margin-top: 15rem;
         }
     }
     .card {
         display: flex;
-        gap: 15rem;
+        gap: 20rem;
         flex-direction: column;
         width: 100%;
-        padding: 25rem 15rem;
+        padding: 30rem 20rem;
         border-radius: s.$roundness;
         box-shadow: s.$shadow;
         //height: 100%;
@@ -67,11 +67,11 @@
             background-color: rgba(s.$cyan, 0.3);
             .signs-pic {
                 display: flex;
-                gap: 15rem;
+                gap: 20rem;
                 height: fit-content;
                 .signs {
                     display: flex;
-                    gap: 15rem;
+                    gap: 20rem;
                     flex-direction: column;
                     height: fit-content;
                     width: 100%;
@@ -83,25 +83,34 @@
                     width: 66%;
                     //max-width: 40%;
                     //flex: 1;
-                    .about-us-pc {
-
-                        background: url("../pc-examples/about-us-pc.webp");
-                        background-position: center;
-                        background-size: cover;
+                    .about-us-pc, .gpu {
                         height: 100%;
                         width: 100%;
                         object-fit: cover;
                         border-radius: calc(s.$roundness / 2);
                         box-shadow: s.$shadow;
                     }
+                    .about-us-pc {
+                        background: url("../pc-examples/about-us-pc.webp");
+                        background-position: center;
+                        background-size: cover;
+                    }
+                    .gpu {
+                        background: url("../pc-examples/1-pure.webp");
+                        background-position: center;
+                        background-size: cover;
+                    }
                 } 
+                &.reversed {
+                    flex-direction: row-reverse;
+                }
             }
             .filler {
                 background-image: url("./about-us-filler.webp");
                 background-size: cover;
                 background-position: center;
                 opacity: 0.3;
-                margin: 0 10rem;
+                margin: 0 15rem;
                 flex: 1;
                 border-radius: calc(s.$roundness / 2);
             }
@@ -118,7 +127,7 @@
         }
     }
     .sign {
-        padding: 10rem;
+        padding: 15rem;
         border-radius: 5rem;
         box-shadow: s.$shadow;
         position: relative;
@@ -129,7 +138,7 @@
         opacity: 0;
         transform: translateY(50rem);
         p {
-            padding: 10rem 0 0 5rem;
+            padding: 15rem 0 0 10rem;
         }
         &::before {
             content: '';
@@ -198,14 +207,14 @@
         }
     }
     & > h3 {
-        margin: 80rem 0 20rem;
+        margin: 80rem 0 25rem;
     }
     ul  {
         li::marker {
             content: "✔ ";
         }
         li + li {
-            margin-top: 20rem;
+            margin-top: 25rem;
         }
     }
 }
