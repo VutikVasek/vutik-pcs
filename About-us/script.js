@@ -41,19 +41,55 @@ $(document).ready(function () {
         observer.observe(this);
     });
 
-    $(".prebuilds .sign").hover(function() {
-        gsap.to(this, {
-            scale: 1.05,
-            duration: 0.3,
-            ease: 'power2.out'
-        })
-    }, function() {
-        gsap.to(this, {
-            scale: 1,
-            duration: 0.3,
-            ease: 'power2.out'
-        })
-    })
+    gsap.registerPlugin(ScrollTrigger);
+    if (window.matchMedia("(pointer: fine)").matches) {
+        $(".prebuilds .sign").hover(function() {
+            gsap.to(this, {
+                scale: 1.05,
+                duration: 0.3,
+                ease: 'power2.out'
+            })
+        }, function() {
+            gsap.to(this, {
+                scale: 1,
+                duration: 0.3,
+                ease: 'power2.out'
+            })
+        });
+    } else {
+        $.each($(".prebuilds .sign"), function(i) {
+            gsap.fromTo(this, {
+                scale: 1.1,
+            }, {
+                scrollTrigger: {
+                    trigger: this,
+                    start: "25rem center",
+                    end: "-25rem top",
+                    invalidateOnRefresh: true,
+                    markers: false,
+                    scrub: true,
+                },
+                scale: 1,
+                ease: 'power2.out',
+            });
+            gsap.fromTo(this, {
+                scale: 1,
+            }, {
+                scrollTrigger: {
+                    trigger: this,
+                    start: "80rem bottom",
+                    end: "25rem center",
+                    invalidateOnRefresh: true,
+                    markers: false,
+                    scrub: true,
+                },
+                scale: 1.1,
+                ease: 'power2.in',
+            });
+        });
+    }
+    
+
 });
 
 function preventTouchScroll(event) {

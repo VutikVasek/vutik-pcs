@@ -376,11 +376,21 @@ footer .copyright .right {
 .intro .logo {
   flex-grow: 1;
   color: #00D1FF;
-  animation: color-change 20s linear infinite;
+  animation: color-change 20s linear -11s infinite;
 }
 .intro .logo svg {
   width: 100%;
   height: 100%;
+}
+.intro .logo svg path {
+  stroke: white;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: var(--i);
+  stroke-dashoffset: var(--i);
+  animation: dash 2s alternate infinite ease-in-out;
+  --i: 900;
+  --i2: 1850;
 }
 
 .content {
@@ -423,6 +433,9 @@ footer .copyright .right {
 .content .card.custom {
   background-color: rgba(39, 206, 175, 0.3);
 }
+.content .card.custom .sign::before {
+  opacity: 0.3;
+}
 .content .card.custom .signs-pic {
   display: flex;
   gap: 20rem;
@@ -455,8 +468,8 @@ footer .copyright .right {
   background-size: cover;
 }
 .content .card.custom .signs-pic a .gpu {
-  background: url("../pc-examples/1-pure.webp");
-  background-position: center;
+  background: url("./gpu.webp");
+  background-position: 75%;
   background-size: cover;
 }
 .content .card.custom .signs-pic.reversed {
@@ -476,6 +489,29 @@ footer .copyright .right {
 }
 .content .card.prebuilds .sign {
   cursor: pointer;
+  border: 2rem solid transparent;
+  border-radius: 5rem;
+  background: linear-gradient(black, black), radial-gradient(circle, rgba(0, 209, 255, var(--alpha)), transparent 20%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-size: 200% 200%;
+  animation: dashing 5s linear infinite;
+  animation-delay: calc(-1s * var(--delay));
+}
+.content .card.prebuilds .sign:nth-child(2) {
+  --delay: 3;
+}
+.content .card.prebuilds .sign:nth-child(3) {
+  --delay: 5;
+}
+.content .card.prebuilds .sign:nth-child(4) {
+  --delay: 2;
+}
+.content .card.prebuilds .sign:nth-child(5) {
+  --delay: 4;
+}
+.content .card.prebuilds .sign:nth-child(6) {
+  --delay: 1;
 }
 .content .card.values {
   margin-top: 50rem;
@@ -487,7 +523,7 @@ footer .copyright .right {
   box-shadow: 0 0 20rem rgba(0, 0, 0, 0.25);
   position: relative;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   opacity: 0;
   transform: translateY(50rem);
 }
@@ -614,19 +650,62 @@ footer .copyright .right {
   overflow: clip;
 }
 
+@property --alpha {
+  syntax: "<number>";
+  initial-value: 1;
+  inherits: false;
+}
+@keyframes dashing {
+  0% {
+    background-position: 0% 0%;
+    --alpha: 0.2;
+  }
+  25% {
+    --alpha: 1;
+  }
+  43% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+    --alpha: 0.4;
+  }
+  75% {
+    --alpha: 0.7;
+  }
+  93% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+    --alpha: 0.2;
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: var(--i);
+  }
+  100% {
+    stroke-dashoffset: var(--i2);
+  }
+}
 @media screen and (max-aspect-ratio: 4/5) {
   body .intro {
     padding: 25rem 75rem;
     flex-direction: column;
+    gap: 50rem;
   }
   body .intro .logo {
-    max-width: 30%;
+    max-width: 45%;
     margin: 0 auto;
+  }
+  body .content {
+    padding-top: 0;
   }
   body .content .cards {
     flex-direction: column;
   }
   body .content .cards .card.custom .signs-pic a {
-    width: 0%;
+    display: none;
   }
 }/*# sourceMappingURL=styles.css.map */
