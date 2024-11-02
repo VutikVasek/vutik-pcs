@@ -54,7 +54,6 @@ $(document).ready(function () {
         "11-rgb",
         "12-rgb",
         "13-rgb",
-        "1-modern",
         "1-mini",
         "2-mini",
         "3-mini",

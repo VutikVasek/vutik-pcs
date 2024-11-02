@@ -96,10 +96,10 @@
                 "4-white"
             ],
             "stats": {
-                "fps": 75,
-                "cena": 80,
+                "fps": 85,
+                "cena": 70,
                 "estetika": 85,
-                "kompaktnost": 30
+                "kompaktnost": 40
             },
             "builds": [
                 {
@@ -158,80 +158,9 @@
                 ]
             }
         },{
-            "key": "modern",
-            "name": "MODERNÍ",
-            "description": "Jednoduchý styl, který vypdá dobře kdykoli",
-            "pictures": [
-                "1-modern",
-                "1-mini",
-                "5-mini"
-            ],
-            "stats": {
-                "fps": 65,
-                "cena": 60,
-                "estetika": 90,
-                "kompaktnost": 40
-            },
-            "builds": [
-                {
-                    "price": "25 000 Kč",
-                    "components": [
-                        "CPU: Ryzen 9 7950X3D",
-                        "Cooler: Lian Li Galahad II Trinity",
-                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
-                        "Mobo: Asus ROG B650-A Gaming WiFi",
-                        "GPU: Asus RTX 4080 Super TUF Gaming",
-                        "SSD: WD_Black SN850X 2TB",
-                        "Case: NZXT H6 Flow",
-                        "Extra: Formulamod Blue and White Cable Extensions"
-                    ],
-                    "case": "./resources/Untitled-12.png"
-                },
-                {
-                    "price": "30 000 Kč",
-                    "components": [
-                        "CPU: Ryzen 9 7950X3D",
-                        "Cooler: Lian Li Galahad II Trinity",
-                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
-                        "GPU: Asus RTX 4080 Super TUF Gaming",
-                        "SSD: WD_Black SN850X 2TB",
-                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
-                        "Case: NZXT H6 Flow",
-                        "Extra: Formulamod Blue and White Cable Extensions"
-                    ],
-                    "case": "./resources/Untitled-12.png"
-                },
-                {
-                    "price": "35 000 Kč",
-                    "components": [
-                        "CPU: Ryzen 9 7950X3D",
-                        "Cooler: Lian Li Galahad II Trinity",
-                        "RAM: T-Force Delta RGB 64GB 6000MT/s",
-                        "Mobo: Asus ROG B650-A Gaming WiFi",
-                        "GPU: Asus RTX 4080 Super TUF Gaming",
-                        "SSD: WD_Black SN850X 2TB",
-                        "PSU: Thermaltake Toughpower GF3 TT Premium 1000W",
-                        "Case: NZXT H6 Flow",
-                        "Extra: Formulamod Blue and White Cable Extensions"
-                    ],
-                    "case": "./resources/Untitled-12.png"
-                }
-            ],
-            "style": {
-                "dark": "#AB735B",
-                "light": "#EBDAA0",
-                "accent": "#DbA96f",
-                "border": "4rem solid #D2A066",
-                "text": [
-                    "#000",
-                    "#000",
-                    "#000"
-                ]
-            }
-        },{
             "key": "mini",
-            "name": "MINI PC",
-            "description": "Perfektní do Vašeho minimalistického pokoje",
+            "name": "MINIMALISTICKÝ",
+            "description": "Perfektní do všech moderních interiérů",
             "pictures": [
                 "1-mini",
                 "2-mini",
@@ -247,7 +176,7 @@
                 "fps": 65,
                 "cena": 50,
                 "estetika": 70,
-                "kompaktnost": 30
+                "kompaktnost": 80
             },
             "builds": [
                 {
@@ -327,9 +256,9 @@
             ],
             "stats": {
                 "fps": 80,
-                "cena": 75,
-                "estetika": 85,
-                "kompaktnost": 60
+                "cena": 70,
+                "estetika": 75,
+                "kompaktnost": 50
             },
             "builds": [
                 {
@@ -401,9 +330,9 @@
             ],
             "stats": {
                 "fps": 90,
-                "cena": 90,
-                "estetika": 75,
-                "kompaktnost": 60
+                "cena": 80,
+                "estetika": 50,
+                "kompaktnost": 40
             },
             "builds": [
                 {
