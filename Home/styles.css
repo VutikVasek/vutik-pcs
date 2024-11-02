@@ -1,4 +1,5 @@
-@import "../global/glide.css";
+@import "../global/glide.core.min.css";
+@import "../global/glide.theme.min.css";
 :root {
   --nav-height: clamp(-120px, -4vmax, -65px);
 }
@@ -63,11 +64,6 @@ main {
   padding-top: clamp(65px, 4vmax, 120px);
 }
 
-img {
-  height: 70rem;
-  width: 70rem;
-}
-
 button, .navbar a, .arrow, .navbar i {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -99,8 +95,7 @@ iframe {
   background-color: transparent;
 }
 .navbar img {
-  height: calc(clamp(65px, 4vmax, 120px) * 0.6);
-  width: calc(clamp(65px, 4vmax, 120px) * 0.6);
+  height: calc(clamp(65px, 4vmax, 120px) * 0.5);
 }
 .navbar .menu-trigger {
   filter: invert(100%);
@@ -125,6 +120,9 @@ iframe {
 .navbar > a:hover {
   font-weight: 550;
   background-color: rgba(39, 206, 175, 0.2);
+}
+.navbar .more {
+  color: #aaa;
 }
 .navbar .menu-phone {
   display: none;
@@ -257,6 +255,85 @@ body .fslightbox-container .fslightbox-fade-in img, body .fslightbox-container .
      object-fit: cover;
 }
 
+.pic-carousel {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+  position: relative;
+}
+.pic-carousel .glide__slides {
+  height: 100%;
+}
+.pic-carousel .glide__slides .glide__slide {
+  height: 100%;
+  width: 100%;
+  padding: 25rem 0;
+}
+.pic-carousel .glide__slides .glide__slide > a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.pic-carousel .glide__slides .glide__slide .prebuild-pic {
+  height: 100%;
+  width: 90%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform-origin: center;
+  filter: drop-shadow(0 0 20rem rgba(0, 0, 0, 0.25));
+  overflow: hidden;
+}
+.pic-carousel .glide__slides .glide__slide .prebuild-pic::before {
+  display: block;
+  position: absolute;
+  content: none;
+  width: 25%;
+  aspect-ratio: 1;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  background: linear-gradient(rgba(0, 0, 0, 0) 10%, rgba(0, 209, 255, 0.8));
+  border-radius: 50%;
+  -webkit-mask-image: radial-gradient(transparent 45%, black 50%, black 60%, transparent 65%);
+  mask-image: radial-gradient(transparent 45%, black 50%, black 60%, transparent 65%);
+  animation: loading 2s linear infinite;
+}
+.pic-carousel .glide__slides .glide__slide .prebuild-pic.show-before::before {
+  content: "";
+}
+.pic-carousel .glide__bullets {
+  bottom: 10rem;
+}
+.pic-carousel.glide {
+  max-width: 100%;
+  height: 100%;
+}
+.pic-carousel .arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50rem;
+  height: 50rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  text-shadow: none;
+  box-shadow: none;
+}
+.pic-carousel .arrow img {
+  width: 30rem;
+  height: 30rem;
+}
+.pic-carousel .arrow:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
 footer {
   display: flex;
   flex-direction: column;
@@ -281,12 +358,11 @@ footer .copyright {
   width: 100%;
   display: flex;
   gap: 50rem;
-  align-items: center;
+  align-items: end;
   justify-content: flex-start;
 }
 footer .copyright .logo {
   height: 35rem;
-  width: 35rem;
 }
 footer .copyright .right {
   margin-left: auto;
