@@ -16,6 +16,7 @@
     //margin-top: s.$navbar-height;
     position: relative;
     padding-bottom: 70rem;;
+    overflow: hidden;
     
     .content {
         padding: 0 100rem;
@@ -130,7 +131,7 @@
             ///height: 100%;
             flex-grow: 1;
             position: relative;
-            overflow: hidden;
+            z-index: -1;
 
             .parallax {
                 //position: absolute;
@@ -146,7 +147,6 @@
                 background-position: center;
                 transform-origin: center;
                 will-change: transform;
-                z-index: 1;
             }
         }
     }
