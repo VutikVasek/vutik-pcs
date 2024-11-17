@@ -445,6 +445,7 @@ footer .copyright .right {
   width: 100%;
   position: relative;
   padding-bottom: 70rem;
+  overflow: hidden;
 }
 .intro .content {
   padding: 0 100rem;
@@ -527,7 +528,7 @@ footer .copyright .right {
   width: 100%;
   flex-grow: 1;
   position: relative;
-  overflow: hidden;
+  z-index: -1;
 }
 .intro .content .main-pc .parallax {
   width: 100%;
@@ -538,7 +539,6 @@ footer .copyright .right {
   background-position: center;
   transform-origin: center;
   will-change: transform;
-  z-index: 1;
 }
 .intro svg {
   height: 70rem;
