@@ -1,0 +1,212 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px;
+  font-size: 65px;
+}
+
+main {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
+
+.settings-container {
+  width: 20%;
+}
+.settings-container .settings {
+  display: flex;
+  flex-direction: column;
+}
+.settings-container .settings > * {
+  width: 100%;
+}
+.settings-container .settings p {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.settings-container .settings button {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.game {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  background-color: #eddba1;
+  display: flex;
+  padding: 15px;
+  border-radius: 40px;
+  gap: 30px;
+}
+.board > * {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+}
+.board .winner {
+  font-size: 40px;
+}
+
+.right {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.send-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.send-btn .send {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.color-picker {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.color-picker .row {
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.row {
+  background-color: #eddba1;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  pointer-events: none;
+  border: 1px solid black;
+}
+
+.slot {
+  width: 50px;
+  aspect-ratio: 1;
+  margin: 5px;
+  border-radius: 50%;
+  background: #c9ba89;
+  pointer-events: all;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.slot.red {
+  background: red;
+}
+.slot.green {
+  background: green;
+}
+.slot.blue {
+  background: blue;
+}
+.slot.purple {
+  background: purple;
+}
+.slot.yellow {
+  background: yellow;
+}
+.slot.cyan {
+  background: cyan;
+}
+.slot.orange {
+  background: orange;
+}
+.slot.pink {
+  background: pink;
+}
+
+button {
+  font-size: 15px;
+  padding: 4px;
+}
+
+input[type=radio] {
+  margin-left: 8px;
+  margin-right: 3px;
+}
+
+.board, .color-picker .row {
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+}
+
+button {
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
+}
+
+.board .row {
+  box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-aspect-ratio: 5/4) {
+  main {
+    flex-direction: column;
+    margin: 0;
+  }
+  .slot {
+    width: 40px;
+    margin: 3px;
+  }
+  .settings-container {
+    width: 100%;
+  }
+  .game {
+    width: 100%;
+    margin: 30px 0;
+  }
+  .game .board {
+    padding: 10px;
+    gap: 10px;
+  }
+  .game .board > * {
+    gap: 10px;
+  }
+  .game .board .winner {
+    font-size: 40px;
+  }
+  .game .board .answers {
+    justify-content: space-around;
+  }
+  .game .board .answers .row {
+    padding: 3px;
+  }
+  .game .board .answers .row .slot {
+    width: 25px;
+    margin: 1px;
+  }
+  .right {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+  .right .send {
+    font-size: 30px;
+    padding: 15px;
+    border-radius: 15px;
+  }
+  .right .color-picker {
+    width: 100%;
+  }
+  .right .color-picker .row {
+    width: 100%;
+    max-width: 350px;
+    flex-wrap: nowrap;
+    border-radius: 100px;
+  }
+  .right .color-picker .row .slot {
+    width: 100%;
+  }
+}/*# sourceMappingURL=styles.css.map */

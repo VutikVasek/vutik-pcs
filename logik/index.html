@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Logik</h1>
+    <main>
+        <div class="settings-container">
+            <button class="show-settings">Ukázat nastavení</button>
+            <div class="settings">
+                <div class="colors-num">
+                    <p>Počet barev</p>
+                    <input type="radio" name="colors" value="5" checked>5</input>
+                    <input type="radio" name="colors" value="6">6</input>
+                    <input type="radio" name="colors" value="7">7</input>
+                    <input type="radio" name="colors" value="8">8</input>
+                </div>
+                <div class="repeats">
+                    <p>Opakování barev</p>
+                    <input type="radio" name="repeats" value="no" checked>Ne</input>
+                    <input type="radio" name="repeats" value="yes">Ano</input>
+                </div>
+                <div class="row-length">
+                    <p>Počet políček v řádku</p>
+                    <input type="radio" name="length" value="4" checked>4</input>
+                    <input type="radio" name="length" value="5">5</input>
+                </div>
+                <div class="position">
+                    <p>Způsob hodnocení</p>
+                    <input type="radio" name="position" value="exact" checked>přesná pozice</input>
+                    <input type="radio" name="position" value="not">bez přesné pozice</input>
+                </div>
+                <div class="reveal">
+                    <button class="show-answer">Ukázat odpověď</button>
+                </div>
+                <div class="reset">
+                    <button class="reset">Resetovat</button>
+                </div>
+            </div>
+        </div>
+        <div class="game">
+            <div class="board"></div>
+        </div>
+        <div class="right">
+        <div class="stats">
+            <h4>Kolikrát jste za určitý počet pokusů vyřešili kombinaci</h4>
+            <p>1: <span>0</span></p>
+            <p>2: <span>0</span></p>
+            <p>3: <span>0</span></p>
+            <p>4: <span>0</span></p>
+            <p>5: <span>0</span></p>
+            <p>6: <span>0</span></p>
+            <p>7: <span>0</span></p>
+            <p>8: <span>0</span></p>
+            <p>9: <span>0</span></p>
+            <p>10: <span>0</span></p>
+        </div>
+        <div class="send-btn">
+            <button class="send">Odeslat</button>
+        </div>
+        <div class="color-picker">
+            <div class="row">
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <p class="answer"></p>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="logik.js"></script>
+</body>
+</html>
