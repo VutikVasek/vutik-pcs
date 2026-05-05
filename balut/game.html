@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hra</title>
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    .active {
+      border-width: 4px;
+    }
+    .dice * {
+      border: 4px solid black;
+      border-radius: 4px;
+      aspect-ratio: 1/1;
+      height: 50px;
+      line-height: 40px;
+      vertical-align: middle;
+      text-align: center;
+      justify-self: center;
+    }
+
+    .locked {
+      color: gray;
+      border-color: gray;
+    }
+    .cats {
+      border: 1px solid black;
+    }
+    .cat {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      
+    }
+    .cat > * {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body class="flex flex-col align-center gap-8">
+  <h1>Balut</h1>
+  <div class="players flex justify-around [&>*]:border-2 [&>*]:p-4"></div>
+  <div class="dice flex justify-around">
+    <div class="die0">0</div>
+    <div class="die1">0</div>
+    <div class="die2">0</div>
+    <div class="die3">0</div>
+    <div class="die4">0</div>
+    <div class="die5">0</div>
+  </div>
+  <button class="border-1 self-center p-2 cursor-pointer hover:bg-gray-200" onclick="roll()">Hoď</button>
+  <div class="cats">
+    <div class="cat" id="cat0">
+      <p>Jedničky</p>
+      <p><span>0</span> bodu</p>
+    </div>
+    <div class="cat" id="cat1">
+      <p>Dvojky</p>
+      <p><span>0</span> bodu</p>
+    </div>
+    <div class="cat" id="cat2">
+      <p>Trojky</p>
+      <p><span>0</span> bodu</p>
+    </div>
+    <div class="cat" id="cat3">
+      <p>Čtyřky</p>
+      <p><span>0</span> bodu</p>
+    </div>
+    <div class="cat" id="cat4">
+      <p>Pětky</p>
+      <p><span>0</span> bodu</p>
+    </div>
+    <div class="cat" id="cat5">
+      <p>Šestky</p>
+      <p><span>0</span> bodu</p>
+    </div>
+    <div class="cat" id="cat6">
+      <p>Malé</p>
+      <p><span>0</span> bodu</p>
+    </div>
+    <div class="cat" id="cat7">
+      <p>Velké</p>
+      <p><span>0</span> bodu</p>
+    </div>
+    <div class="cat" id="cat8">
+      <p>Sudé</p>
+      <p><span>0</span> bodu</p>
+    </div>
+    <div class="cat" id="cat9">
+      <p>Liché</p>
+      <p><span>0</span> bodu</p>
+    </div>
+    <div class="cat" id="cat10">
+      <p>Dvoják</p>
+      <p><span>0</span> bodu</p>
+    </div>
+    <div class="cat" id="cat11">
+      <p>Troják</p>
+      <p><span>0</span> bodu</p>
+    </div>
+    <div class="cat" id="cat12">
+      <p>Generál</p>
+      <p><span>0</span> bodu</p>
+    </div>
+    <div class="cat" id="cat13">
+      <p>Postupka</p>
+      <p><span>0</span> bodu</p>
+    </div>
+    <div class="cat" id="cat14">
+      <p>Pyramida</p>
+      <p><span>0</span> bodu</p>
+    </div>
+  </div>
+  <button class="border-1 self-center p-2 cursor-pointer hover:bg-gray-200" onclick="submit()">Potvrdit</button>
+
+  <div class="absolute w-full h-full bg-gray-900/40 flex justify-center items-center hidden">
+    <div class="bg-white w-fit h-fit p-4">
+      <p>Vyhrál: <span class="winner"></span></p>
+      <a href="/index.html" class="block w-fit mx-auto mt-2"><button class="border-1 self-center p-2 cursor-pointer hover:bg-gray-200">Nová hra</button></a>
+    </div>
+  </div>
+
+  <script>
+
+
+
+    const playerNames = [];
+    const playerScores = [];
+    const playerTables = [];
+    const playerTablesLocked = [];
+    let activePlayer = 0;
+    let rollNumber = 0;
+    let selectedCat = -1;
+    let currentValues = Array(15).fill(0);
+    let rolls = Array(6).fill(0);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const player_count = urlParams.get('player-count');
+
+    for (let i = 0; i < player_count; i++) {
+      playerNames[i] = urlParams.get(`player${i}name`).trim() || `Hráč${i+1}`;
+      playerScores[i] = 0;
+      playerTables[i] = Array(15).fill(0);
+      playerTablesLocked[i] = Array(15).fill(false);
+      $(".players").append(`
+        <div class="player player${i}">
+          <p>${playerNames[i]}</p>
+          <p>Bodů: <span class="player${i}score">0</span></p>
+        </div>
+      `)
+    }
+
+    for (let i = 0; i < 6; i++) {
+      $(`.die${i}`).click(e => {
+        e.target.classList.toggle("locked")
+      })
+    }
+
+    for (let i = 0; i < 15; i++) {
+      $(`#cat${i}`).click(e => {
+        if (playerTablesLocked[activePlayer][i]) return;
+        selectedCat = i;
+        for (let i = 0; i < 15; i++) {
+          $(`#cat${i}`)[0].classList.remove("active")
+        }
+        e.currentTarget.classList.add("active")
+      })
+    }
+
+    changeActive(0);
+
+    function shiftActive() {
+      if (activePlayer == player_count - 1) changeActive(0);
+      else changeActive(activePlayer+1);
+    }
+
+    function changeActive(a) {
+      activePlayer = a;
+      rollNumber = 0;
+      rolls = Array(6).fill(0);
+
+      if (playerTablesLocked[activePlayer].every(x => x)) return end();
+
+      for (let i = 0; i < player_count; i++) {
+        $(".player")[i].classList.remove("active");
+        if (i == a) $(".player")[i].classList.add("active");
+      }
+      for (let i = 0; i < 6; i++) {
+        $(`.die${i}`)[0].classList.remove("locked");
+        $(`.die${i}`).html(0)
+      }
+      for (let i = 0; i < 15; i++) {
+        $(`#cat${i}`)[0].classList.remove("active");
+      }
+    }
+
+    function roll() {
+      if (rollNumber >= 3) return;
+      // rolls = [4, 4, 4, 4, 4, 4]
+      for (let i = 0; i < 6; i++) {
+        if ($(`.die${i}`)[0].classList.contains("locked")) continue;
+        rolls[i] = Math.floor(Math.random() * 6) + 1;
+        $(`.die${i}`).html(rolls[i])
+      }
+      rollNumber++;
+      if (rollNumber >= 3) {
+        for (let i = 0; i < 6; i++) {
+          $(`.die${i}`)[0].classList.remove("locked");
+          $(`.die${i}`)[0].classList.add("locked");
+        }
+      }
+
+
+      // Jedničky až šestky
+      for (let i = 0; i < 6; i++) {
+        currentValues[i] = playerTablesLocked[activePlayer][i] ? playerTables[activePlayer][selectedCat] : rolls.reduce((total, x) => (x == i + 1 ? total + x : total), 0);
+      }
+      //Soucty
+      currentValues[6] = playerTablesLocked[activePlayer][6] ? playerTables[activePlayer][selectedCat] : rolls.reduce((total, x) => (x <= 3 ? total + x : total), 0);
+      currentValues[7] = playerTablesLocked[activePlayer][7] ? playerTables[activePlayer][selectedCat] : rolls.reduce((total, x) => (x >= 4 ? total + x : total), 0);
+      currentValues[8] = playerTablesLocked[activePlayer][8] ? playerTables[activePlayer][selectedCat] : rolls.reduce((total, x) => (x % 2 == 0 ? total + x : total), 0);
+      currentValues[9] = playerTablesLocked[activePlayer][9] ? playerTables[activePlayer][selectedCat] : rolls.reduce((total, x) => (x % 2 == 1 ? total + x : total), 0);
+
+      //Dvojak
+      let rollsCopy = [...rolls];
+      let dvojak = false;
+      if (rollsCopy.filter(x => x == rollsCopy[0]).length == 2) rollsCopy = rollsCopy.filter(x => x !== rollsCopy[0]);
+      if (rollsCopy.filter(x => x == rollsCopy[0]).length == 2) rollsCopy = rollsCopy.filter(x => x !== rollsCopy[0]);
+      if (rollsCopy.filter(x => x == rollsCopy[0]).length == 2) rollsCopy = rollsCopy.filter(x => x !== rollsCopy[0]);
+      if (rollsCopy.length == 0) dvojak = true;
+      currentValues[10] = playerTablesLocked[activePlayer][10] ? playerTables[activePlayer][selectedCat] : (dvojak ? rolls.reduce((total, x) => total + x, 0) : 0);
+
+      //Trojak
+      rollsCopy = [...rolls];
+      let trojak = false;
+      if (rollsCopy.filter(x => x == rollsCopy[0]).length == 3) rollsCopy = rollsCopy.filter(x => x !== rollsCopy[0]);
+      if (rollsCopy.filter(x => x == rollsCopy[0]).length == 3) rollsCopy = rollsCopy.filter(x => x !== rollsCopy[0]);
+      if (rollsCopy.length == 0) trojak = true;
+      currentValues[11] = playerTablesLocked[activePlayer][11] ? playerTables[activePlayer][selectedCat] : (trojak ? rolls.reduce((total, x) => total + x, 0) : 0);
+      
+      //General
+      currentValues[12] = playerTablesLocked[activePlayer][12] ? playerTables[activePlayer][selectedCat] : (rolls.filter(x => x == rolls[0]).length == 6 ? rolls.reduce((total, x) => total + x, 0) : 0);
+
+      //Postupka
+      let postupka = true;
+      for (let i = 1; i < 7; i++) {
+        if (rolls.filter(x => x == i).length !== 1) {
+          postupka = false;
+          break;
+        }
+      }
+      currentValues[13] = playerTablesLocked[activePlayer][13] ? playerTables[activePlayer][selectedCat] : (postupka ? rolls.reduce((total, x) => total + x, 0) : 0);
+
+      //Pyramida
+      const smallest = Math.min(...rolls);
+      const greatest = Math.max(...rolls);
+      let pyramid = false;
+      if (rolls.filter(x => x == smallest).length == 1 && rolls.filter(x => x == smallest + 1).length == 2 && rolls.filter(x => x == smallest + 2).length == 3) pyramid = true;
+      if (rolls.filter(x => x == greatest).length == 1 && rolls.filter(x => x == greatest - 1).length == 2 && rolls.filter(x => x == greatest - 2).length == 3) pyramid = true;
+      currentValues[14] = playerTablesLocked[activePlayer][14] ? playerTables[activePlayer][selectedCat] : (pyramid ? rolls.reduce((total, x) => total + x, 0) : 0); 
+
+      displayValues();
+    }
+
+    function displayValues() {
+      for (let i = 0; i < 15; i++) {
+        $(`#cat${i}`)[0].classList.remove("locked");
+        if (playerTablesLocked[activePlayer][i]) $(`#cat${i}`)[0].classList.add("locked");
+        $(`#cat${i} span`).html(currentValues[i]);
+      }
+    }
+
+    function submit() {
+      if (selectedCat == -1) return;
+      playerTablesLocked[activePlayer][selectedCat] = true;
+      playerTables[activePlayer][selectedCat] = currentValues[selectedCat];
+      playerScores[activePlayer] += currentValues[selectedCat];
+      $(`.player${activePlayer}score`).html(playerScores[activePlayer]);
+
+      selectedCat = -1;
+      shiftActive();
+      currentValues = playerTables[activePlayer];
+      displayValues();
+    }
+
+    function end() {
+      $(".absolute").toggleClass("hidden");
+      const max = Math.max(...playerScores);
+      let winningPlayers = [];
+      while (playerScores.findIndex((x, i, obj) => (x == max && !winningPlayers.includes(i))) != -1) {
+        winningPlayers.push(playerScores.findIndex((x, i) => x == max && !winningPlayers.includes(i)));
+      }
+      $(".winner").html(winningPlayers.map(i => playerNames[i]).join(", "));
+    }
+
+  </script>
+</body>
+</html>

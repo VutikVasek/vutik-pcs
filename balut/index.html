@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balut</title>
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h1>Balut</h1>
+  <form action="game.html">
+    <div>
+      <label for="player-count">Počet hráčů:</label>
+      <input type="number" name="player-count" id="player-count" min="2" max="4" value="2" >
+    </div>
+    <div class="names">
+      <div>
+        <label for="player0name">Jméno hráče 1:</label>
+        <input type="text" name="player0name" id="player0name">
+      </div>
+      <div>
+        <label for="player1name">Jméno hráče 2:</label>
+        <input type="text" name="player1name" id="player1name">
+      </div>
+    </div>
+    <button type="submit">Spustit hru</button>
+  </form>
+  <script>
+    $(document).ready(function () {
+      $("#player-count").change(e => {
+        $(".names").empty();
+        for (let i = 0; i < e.target.value; i++) {
+          $(".names").append(`
+            <div>
+              <label for="player${i}name">Jméno hráče ${i + 1}:</label>
+              <input type="text" name="player${i}name" id="player${i}name">
+            </div>
+          `)
+        }
+      })
+  })
+  </script>
+</body>
+</html>
